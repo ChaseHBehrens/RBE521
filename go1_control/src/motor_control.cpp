@@ -6,12 +6,18 @@ class MyMotorControl : public rclcpp::Node
 public:
     MyMotorControl() : Node("my_motor_control")
     {
-        // Create publishers for each joint you want to control
-        // (or all 12 if you want full control)
         FR_hip_pub_   = create_publisher<Cmd>("/FR_hip_controller/command", 1);
         FR_thigh_pub_ = create_publisher<Cmd>("/FR_thigh_controller/command", 1);
         FR_calf_pub_  = create_publisher<Cmd>("/FR_calf_controller/command", 1);
-        // ... repeat for all 12 joints
+        FL_hip_pub_   = create_publisher<Cmd>("/FL_hip_controller/command", 1);
+        FL_thigh_pub_ = create_publisher<Cmd>("/FL_thigh_controller/command", 1);
+        FL_calf_pub_  = create_publisher<Cmd>("/FL_calf_controller/command", 1);
+        RR_hip_pub_   = create_publisher<Cmd>("/RR_hip_controller/command", 1);
+        RR_thigh_pub_ = create_publisher<Cmd>("/RR_thigh_controller/command", 1);
+        RR_calf_pub_  = create_publisher<Cmd>("/RR_calf_controller/command", 1);
+        RL_hip_pub_   = create_publisher<Cmd>("/RL_hip_controller/command", 1);
+        RL_thigh_pub_ = create_publisher<Cmd>("/RL_thigh_controller/command", 1);
+        RL_calf_pub_  = create_publisher<Cmd>("/RL_calf_controller/command", 1);
 
         timer_ = create_wall_timer(
             std::chrono::milliseconds(2),  // 500Hz
@@ -29,20 +35,29 @@ private:
         cmd.kd   = 0.5;    // damping
         cmd.tau  = 0.0;
 
-        // FR hip to 0 radians
         cmd.q = 0.0;
         FR_hip_pub_->publish(cmd);
+        FL_hip_pub_->publish(cmd);
+        RR_hip_pub_->publish(cmd);
+        RL_hip_pub_->publish(cmd);
 
-        // FR thigh to 0.8 rad (~45 deg, standing pose)
         cmd.q = 0.8;
         FR_thigh_pub_->publish(cmd);
+        FL_thigh_pub_->publish(cmd);
+        RR_thigh_pub_->publish(cmd);
+        RL_thigh_pub_->publish(cmd);
 
-        // FR calf to -1.6 rad
         cmd.q = -1.6;
         FR_calf_pub_->publish(cmd);
+        FL_calf_pub_->publish(cmd);
+        RR_calf_pub_->publish(cmd);
+        RL_calf_pub_->publish(cmd);
     }
 
     rclcpp::Publisher<Cmd>::SharedPtr FR_hip_pub_, FR_thigh_pub_, FR_calf_pub_;
+    rclcpp::Publisher<Cmd>::SharedPtr FL_hip_pub_, FL_thigh_pub_, FL_calf_pub_;
+    rclcpp::Publisher<Cmd>::SharedPtr RR_hip_pub_, RR_thigh_pub_, RR_calf_pub_;
+    rclcpp::Publisher<Cmd>::SharedPtr RL_hip_pub_, RL_thigh_pub_, RL_calf_pub_;
     rclcpp::TimerBase::SharedPtr timer_;
 };
 
