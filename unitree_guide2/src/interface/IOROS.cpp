@@ -279,9 +279,9 @@ IOROS::IOROS(rclcpp::Node::SharedPtr node_ptr) : IOInterface(){
     // ros::AsyncSpinner subSpinner(1); // one threads
     // subSpinner.start();
 
-    // ROS 2 equivalent - use 2 threads for callback processing
+    // ROS 2 equivalent
     auto executor = std::make_shared<rclcpp::executors::MultiThreadedExecutor>(
-        rclcpp::ExecutorOptions(), 2
+        rclcpp::ExecutorOptions(), 1
     );
     
     executor->add_node(_nm);

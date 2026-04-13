@@ -113,22 +113,17 @@ void State_Trotting::run(){
 }
 
 bool State_Trotting::checkStepOrNot(){
-    // FIX for Gazebo Sim: Always return true to maintain active trot-in-place
-    // Gazebo Sim physics requires active stepping to maintain balance, unlike Gazebo Classic
-    // The robot will trot in place (zero velocity) until user commands motion with w/a/s/d
-    // This prevents falling when standing still in trotting mode
-    return true;
-    
-    // Original logic (disabled for Gazebo Sim):
-    // if( (fabs(_vCmdBody(0)) > 0.03) ||
-    //     (fabs(_vCmdBody(1)) > 0.03) ||
-    //     (fabs(_posError(0)) > 0.08) ||
-    //     (fabs(_posError(1)) > 0.08) ||
-    //     (fabs(_dYawCmd) > 0.20) ){
-    //     return true;
-    // }else{
-    //     return false;
-    // }
+    if( (fabs(_vCmdBody(0)) > 0.03) ||
+        (fabs(_vCmdBody(1)) > 0.03) ||
+        (fabs(_posError(0)) > 0.08) ||
+        (fabs(_posError(1)) > 0.08) ||
+        (fabs(_velError(0)) > 0.05) ||
+        (fabs(_velError(1)) > 0.05) ||
+        (fabs(_dYawCmd) > 0.20) ){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 void State_Trotting::setHighCmd(double vx, double vy, double wz){

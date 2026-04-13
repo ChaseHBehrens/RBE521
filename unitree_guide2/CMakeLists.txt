@@ -82,9 +82,7 @@ if(CATKIN_MAKE)
         add_definitions(-DCOMPILE_WITH_SIMULATION)
         find_package(controller_manager REQUIRED)
         find_package(joint_trajectory_controller REQUIRED)
-        # Gazebo Classic -> Gazebo Sim change:
-        # find_package(gazebo_ros REQUIRED)
-        find_package(ros_gz_sim REQUIRED)
+        find_package(gazebo_ros REQUIRED)
     endif()
 
     # find_package(rosidl_generator REQUIRED)
@@ -142,6 +140,7 @@ if(CATKIN_MAKE)
     target_link_libraries(junior_ctrl ${catkin_LIBRARIES})
     # add_dependencies(junior_ctrl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
     ament_target_dependencies(junior_ctrl rclcpp std_msgs tf2 tf2_ros nav_msgs sensor_msgs geometry_msgs ros2_unitree_legged_msgs Boost)
+
 endif()
 if(DEBUG)
     target_include_directories(junior_ctrl PRIVATE ${Python2_INCLUDE_DIRS} ${Python2_NumPy_INCLUDE_DIRS})
@@ -171,4 +170,3 @@ link_directories(
 install(TARGETS junior_ctrl DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
-
