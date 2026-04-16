@@ -9,6 +9,7 @@ FSM::FSM(CtrlComponents *ctrlComp)
 
     _stateList.invalid = nullptr;
     _stateList.passive = new State_Passive(_ctrlComp);
+    _stateList.gaitTransition = new State_GaitTransition(_ctrlComp);
     _stateList.fixedStand = new State_FixedStand(_ctrlComp);
     _stateList.freeStand = new State_FreeStand(_ctrlComp);
     _stateList.trotting = new State_Trotting(_ctrlComp);
