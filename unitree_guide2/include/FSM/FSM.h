@@ -18,10 +18,12 @@
 #include "control/CtrlComponents.h"
 #ifdef COMPILE_WITH_MOVE_BASE
     #include "FSM/State_move_base.h"
+    #include "FSM/State_move_gait.h"
 #endif  // COMPILE_WITH_MOVE_BASE
 
 #ifdef COMPILE_WITH_ROS2_MB
     #include "FSM/State_move_base.h"
+    #include "FSM/State_move_gait.h"
 #endif  // COMPILE_WITH_ROS2_MB
 
 struct FSMStateList{
@@ -36,10 +38,12 @@ struct FSMStateList{
     State_GaitTransition *gaitTransition;
 #ifdef COMPILE_WITH_MOVE_BASE
     State_move_base *moveBase;
+    State_move_gait *moveGait;
 #endif  // COMPILE_WITH_MOVE_BASE
 
 #ifdef COMPILE_WITH_ROS2_MB
     State_move_base *moveBase;
+    State_move_gait *moveGait;
 #endif  // COMPILE_WITH_ROS2_MB
 
     void deletePtr(){
@@ -54,9 +58,11 @@ struct FSMStateList{
         delete stepTest;
 #ifdef COMPILE_WITH_MOVE_BASE
         delete moveBase;
+        delete moveGait;
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
         delete moveBase;
+        delete moveGait;
 #endif  // COMPILE_WITH_ROS2_MB
     }
 };

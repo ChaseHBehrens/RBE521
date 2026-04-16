@@ -6,7 +6,6 @@
 
 FSM::FSM(CtrlComponents *ctrlComp)
     :_ctrlComp(ctrlComp){
-
     _stateList.invalid = nullptr;
     _stateList.passive = new State_Passive(_ctrlComp);
     _stateList.gaitTransition = new State_GaitTransition(_ctrlComp);
@@ -18,9 +17,11 @@ FSM::FSM(CtrlComponents *ctrlComp)
     _stateList.stepTest = new State_StepTest(_ctrlComp);
 #ifdef COMPILE_WITH_MOVE_BASE
     _stateList.moveBase = new State_move_base(_ctrlComp);
+    _stateList.moveGait = new State_move_gait(_ctrlComp);
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
     _stateList.moveBase = new State_move_base(_ctrlComp);
+    _stateList.moveGait = new State_move_gait(_ctrlComp);
 #endif  // COMPILE_WITH_ROS2_MB
     initialize();
 }

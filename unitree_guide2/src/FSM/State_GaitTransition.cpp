@@ -66,7 +66,7 @@ FSMStateName State_GaitTransition::checkChange(){
         return FSMStateName::FIXEDSTAND;
     }
     else{
-        return FSMStateName::TROTTING;
+        return FSMStateName::TRANSITION;
     }
 }
 
@@ -142,6 +142,12 @@ void State_GaitTransition::setHighCmd(double vx, double vy, double wz){
     _vCmdBody(1) = vy;
     _vCmdBody(2) = 0; 
     _dYawCmd = wz;
+}
+
+void State_GaitTransition::setGaitCmd(double period, double stancePhaseRatio, Vec4 bias){
+    _targetBeta = stancePhaseRatio;
+    _targetBias = bias;
+    _targetPeriod = period;
 }
 
 void State_GaitTransition::getUserCmd(){

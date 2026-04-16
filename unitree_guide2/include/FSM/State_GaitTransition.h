@@ -17,6 +17,7 @@ public:
     void exit();
     virtual FSMStateName checkChange();
     void setHighCmd(double vx, double vy, double wz);
+    void setGaitCmd(double period, double stancePhaseRatio, Vec4 bias);
 private:
     void calcTau();
     void calcQQd();
