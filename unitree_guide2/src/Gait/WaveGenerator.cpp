@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sys/time.h>
 #include <math.h>
+#include "WaveGenerator.h"
 
 WaveGenerator::WaveGenerator(double period, double stancePhaseRatio, Vec4 bias)
     : _period(period), _stRatio(stancePhaseRatio), _bias(bias)
@@ -97,6 +98,18 @@ float WaveGenerator::getT()
     return _period;
 }
 
+void WaveGenerator::setPeriod(double period)
+{
+    _period = period;
+}
+void WaveGenerator::setBias(Vec4 bias)
+{
+    _bias = bias;
+}
+void WaveGenerator::setBeta(double stancePhaseRatio)
+{
+    _stRatio = stancePhaseRatio;
+}
 void WaveGenerator::calcWave(Vec4 &phase, VecInt4 &contact, WaveStatus status)
 {
     if (status == WaveStatus::WAVE_ALL)

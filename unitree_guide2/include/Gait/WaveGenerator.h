@@ -22,6 +22,9 @@ public:
     float getTstance();
     float getTswing();
     float getT();
+    void setPeriod(double period);
+    void setBias(Vec4 bias);
+    void setBeta(double stancePhaseRatio);
 private:
     void calcWave(Vec4 &phase, VecInt4 &contact, WaveStatus status);
 

@@ -5,7 +5,7 @@
 #include <iomanip>
 
 State_GaitTransition::State_GaitTransition(CtrlComponents *ctrlComp)
-             :FSMState(ctrlComp, FSMStateName::TROTTING, "trotting"), 
+             :FSMState(ctrlComp, FSMStateName::TRANSITION, "transition"), 
               _est(ctrlComp->estimator), _phase(ctrlComp->phase), 
               _contact(ctrlComp->contact), _robModel(ctrlComp->robotModel), 
               _balCtrl(ctrlComp->balCtrl){
@@ -71,6 +71,12 @@ FSMStateName State_GaitTransition::checkChange(){
 }
 
 void State_GaitTransition::run(){
+    //update gait params
+    _ctrlComp->waveGen->setBias(_targetBias);
+    _ctrlComp->waveGen->setBeta(_targetBeta);
+    _ctrlComp->waveGen->setPeriod(_targetPeriod);
+    _ctrlComp->runWaveGen();
+
     _posBody = _est->getPosition();
     _velBody = _est->getVelocity();
     _posFeet2BGlobal = _est->getPosFeet2BGlobal();
