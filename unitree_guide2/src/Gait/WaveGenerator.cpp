@@ -5,7 +5,6 @@
 #include <iostream>
 #include <sys/time.h>
 #include <math.h>
-#include "WaveGenerator.h"
 
 WaveGenerator::WaveGenerator(double period, double stancePhaseRatio, Vec4 bias)
     : _period(period), _stRatio(stancePhaseRatio), _bias(bias)

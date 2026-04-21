@@ -85,6 +85,9 @@ FSMState* FSM::getNextState(FSMStateName stateName){
     case FSMStateName::TROTTING:
         return _stateList.trotting;
         break;
+    case FSMStateName::TRANSITION:
+        return _stateList.gaitTransition;
+        break;
     case FSMStateName::BALANCETEST:
         return _stateList.balanceTest;
         break;
@@ -98,10 +101,16 @@ FSMState* FSM::getNextState(FSMStateName stateName){
     case FSMStateName::MOVE_BASE:
         return _stateList.moveBase;
         break;
+    case FSMStateName::MOVE_GAIT:
+        return _stateList.moveGait;
+        break;
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
     case FSMStateName::MOVE_BASE:
         return _stateList.moveBase;
+        break;
+    case FSMStateName::MOVE_GAIT:
+        return _stateList.moveGait;
         break;
 #endif  // COMPILE_WITH_ROS2_MB
     default:

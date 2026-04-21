@@ -61,10 +61,12 @@ enum class FSMStateName{
     TROTTING,
     TRANSITION,
 #ifdef COMPILE_WITH_MOVE_BASE
-    MOVE_BASE,       // move_base
+    MOVE_BASE,
+    MOVE_GAIT,     // move_base
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
-    MOVE_BASE,       // move_base
+    MOVE_BASE,   
+    MOVE_GAIT,    // move_base
 #endif  // COMPILE_WITH_ROS2_MB
     BALANCETEST,
     SWINGTEST,

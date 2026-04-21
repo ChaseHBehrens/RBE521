@@ -3,8 +3,8 @@
 ***********************************************************************/
 #ifdef COMPILE_WITH_MOVE_BASE
 
-#ifndef STATE_MOVE_BASE_H
-#define STATE_MOVE_BASE_H
+#ifndef STATE_MOVE_GAIT_H
+#define STATE_MOVE_GAIT_H
 
 #include "FSM/State_GaitTransition.h"
 #include "mathTypes.h"
@@ -37,8 +37,8 @@ private:
 
 #ifdef COMPILE_WITH_ROS2_MB
 
-#ifndef STATE_MOVE_BASE_H
-#define STATE_MOVE_BASE_H
+#ifndef STATE_MOVE_GAIT_H
+#define STATE_MOVE_GAIT_H
 
 #include "FSM/State_Trotting.h"
 #include "rclcpp/rclcpp.hpp"

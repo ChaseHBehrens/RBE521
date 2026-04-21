@@ -7,7 +7,7 @@
 #include "ros2_unitree_legged_msgs/msg/GaitMsg"
 
 State_move_gait::State_move_gait(CtrlComponents *ctrlComp)
-    :State_Trotting(ctrlComp){
+    :State_GaitTransition(ctrlComp){
     _stateName = FSMStateName::MOVE_GAIT;
     _stateNameString = "move_gait";
     initRecv();
@@ -36,8 +36,8 @@ void State_move_gait::twistCallback(const geometry_msgs::Twist& msg){
     _vy = msg.linear.y;
     _wz = msg.angular.z;
 }
-void State_move_gait::gaitCallback(const geometry_msgs::Twist& msg){
-    _beta= msg.beta;
+void State_move_gait::gaitCallback(const ros2_unitree_legged_msgs::GaitCmd& msg){
+    _beta = msg.beta;
     _period = msg.period;
     _bias = msg.bias;
 }
@@ -51,10 +51,10 @@ void State_move_gait::initRecv(){
 
 #ifdef COMPILE_WITH_ROS2_MB
 
-#include "FSM/State_move_base.h"
+#include "FSM/State_move_gait.h"
 
 State_move_gait::State_move_gait(CtrlComponents *ctrlComp)
-    :State_Trotting(ctrlComp){
+:State_GaitTransition(ctrlComp){
     _stateName = FSMStateName::MOVE_GAIT;
     _stateNameString = "move_gait";
     _nm = rclcpp::Node::make_shared("state_mg");
@@ -85,7 +85,7 @@ void State_move_gait::getUserCmd(){
     setHighCmd(_vx, _vy, _wz);
 }
 
-void State_move_base::twistCallback(const geometry_msgs::msg::Twist::SharedPtr msg){
+void State_move_gait::twistCallback(const geometry_msgs::msg::Twist::SharedPtr msg){
     _vx = msg->linear.x;
     _vy = msg->linear.y;
     _wz = msg->angular.z;
