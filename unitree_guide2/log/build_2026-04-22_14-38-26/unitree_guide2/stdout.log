@@ -1,0 +1,4 @@
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[  6%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_move_gait.cpp.o[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/control/ControlFrame.cpp.o[0m

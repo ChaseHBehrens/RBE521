@@ -1,0 +1,176 @@
+[0.000000] (-) TimerEvent: {}
+[0.000796] (unitree_guide2) JobQueued: {'identifier': 'unitree_guide2', 'dependencies': OrderedDict()}
+[0.001729] (unitree_guide2) JobStarted: {'identifier': 'unitree_guide2'}
+[0.020092] (unitree_guide2) JobProgress: {'identifier': 'unitree_guide2', 'progress': 'cmake'}
+[0.021517] (unitree_guide2) JobProgress: {'identifier': 'unitree_guide2', 'progress': 'build'}
+[0.022940] (unitree_guide2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2', '--', '-j16', '-l16'], 'cwd': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'LANGUAGE': '', 'USER': 'nebbackwards', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'XCURSOR_SIZE': '24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control/lib:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/nebbackwards', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'KB_LAYOUT_DIR': '/usr/lib/x86_64-linux-gnu/qt5/qml/QMLTermWidget/kb-layouts', 'PS1': '\\[\x1b(B\x1b[m\\]\\[\\033[38;5;40m\\]\\u\\[\x1b(B\x1b[m\\]\\[\\033[38;5;40m\\]@\\h\\[\x1b(B\x1b[m\\]\\[\\033[38;5;27m\\]\\w\\e[38;5;196m\\]$(parse_git_branch)\\[\x1b(B\x1b[m\\]\\[\x1b(B\x1b[m\\]\\[\\e[38;5;15m\\] \\[\x1b(B\x1b[m\\]', 'MANAGERPID': '3841', 'SYSTEMD_EXEC_PID': '4339', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/nebbackwards/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '17754', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': '', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'nebbackwards', 'WINDOWID': '0', 'JOURNAL_STREAM': '9:30599', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'COLORFGBG': '15;0', 'USERNAME': 'nebbackwards', 'TERM': 'xterm', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/nebbackwards/miniconda3/condabin:/home/nebbackwards/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/thinkpad-E16:@/tmp/.ICE-unix/4085,unix/thinkpad-E16:/tmp/.ICE-unix/4085', 'INVOCATION_ID': 'bde06ef6f1b0436fa4a2100dc12ab920', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'Yaru', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.QV91N3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/unitree_guide2:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_gazebo:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_description:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/nebbackwards/miniconda3/bin/python', 'QSG_RENDER_LOOP': 'threaded', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', '_CONDA_EXE': '/home/nebbackwards/miniconda3/bin/conda', 'COLORSCHEMES_DIR': '/usr/lib/x86_64-linux-gnu/qt5/qml/QMLTermWidget/color-schemes', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/nebbackwards/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/nebbackwards/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs/lib/python3.12/site-packages:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/unitree_guide2:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_gazebo:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation:/opt/ros/jazzy'}), 'shell': False}
+[0.100060] (-) TimerEvent: {}
+[0.200819] (-) TimerEvent: {}
+[0.301274] (-) TimerEvent: {}
+[0.381005] (unitree_guide2) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_move_gait.cpp.o\x1b[0m\n'}
+[0.401480] (-) TimerEvent: {}
+[0.502011] (-) TimerEvent: {}
+[0.602513] (-) TimerEvent: {}
+[0.703054] (-) TimerEvent: {}
+[0.803553] (-) TimerEvent: {}
+[0.904018] (-) TimerEvent: {}
+[1.004419] (-) TimerEvent: {}
+[1.104798] (-) TimerEvent: {}
+[1.205184] (-) TimerEvent: {}
+[1.305570] (-) TimerEvent: {}
+[1.406048] (-) TimerEvent: {}
+[1.506435] (-) TimerEvent: {}
+[1.606799] (-) TimerEvent: {}
+[1.707368] (-) TimerEvent: {}
+[1.725559] (unitree_guide2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/message/LowlevelCmd.h:8\x1b[m\x1b[K,\n'}
+[1.726025] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/control/CtrlComponents.h:7\x1b[m\x1b[K,\n'}
+[1.726159] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/FSMState.h:10\x1b[m\x1b[K,\n'}
+[1.726254] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/State_GaitTransition.h:7\x1b[m\x1b[K,\n'}
+[1.726354] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/State_move_gait.h:43\x1b[m\x1b[K,\n'}
+[1.726456] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/src/FSM/State_move_gait.cpp:54\x1b[m\x1b[K:\n'}
+[1.726543] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/common/mathTools.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAvgCov::\x1b[01;32m\x1b[KAvgCov\x1b[m\x1b[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.726623] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/common/mathTools.h:278:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAvgCov::_valueName\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.726742] (unitree_guide2) StderrLine: {'line': b'  278 |     std::string \x1b[01;35m\x1b[K_valueName\x1b[m\x1b[K;\n'}
+[1.726833] (unitree_guide2) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.726912] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/common/mathTools.h:272:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbool AvgCov::_avgOnly\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.727007] (unitree_guide2) StderrLine: {'line': b'  272 |     bool \x1b[01;35m\x1b[K_avgOnly\x1b[m\x1b[K;\n'}
+[1.727089] (unitree_guide2) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[1.727164] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/common/mathTools.h:246:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.727252] (unitree_guide2) StderrLine: {'line': b'  246 |     \x1b[01;35m\x1b[KAvgCov\x1b[m\x1b[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)\n'}
+[1.727332] (unitree_guide2) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[1.756809] (unitree_guide2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/message/LowlevelState.h:10\x1b[m\x1b[K,\n'}
+[1.757171] (unitree_guide2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/control/CtrlComponents.h:8\x1b[m\x1b[K:\n'}
+[1.757303] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/interface/CmdPanel.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void* CmdPanel::\x1b[01;32m\x1b[Krun\x1b[m\x1b[K(void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.757426] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/interface/CmdPanel.h:50:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Karg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.757714] (unitree_guide2) StderrLine: {'line': b'   50 |     virtual void* run(\x1b[01;35m\x1b[Kvoid *arg\x1b[m\x1b[K){return NULL;}\n'}
+[1.757830] (unitree_guide2) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K~~~~~~^~~\x1b[m\x1b[K\n'}
+[1.807526] (-) TimerEvent: {}
+[1.907934] (-) TimerEvent: {}
+[2.008324] (-) TimerEvent: {}
+[2.108724] (-) TimerEvent: {}
+[2.209118] (-) TimerEvent: {}
+[2.309554] (-) TimerEvent: {}
+[2.409943] (-) TimerEvent: {}
+[2.510346] (-) TimerEvent: {}
+[2.610753] (-) TimerEvent: {}
+[2.711201] (-) TimerEvent: {}
+[2.811597] (-) TimerEvent: {}
+[2.912089] (-) TimerEvent: {}
+[3.012494] (-) TimerEvent: {}
+[3.112895] (-) TimerEvent: {}
+[3.213247] (-) TimerEvent: {}
+[3.230165] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/control/CtrlComponents.h:\x1b[m\x1b[K In destructor \xe2\x80\x98\x1b[01m\x1b[KCtrlComponents::\x1b[01;32m\x1b[K~CtrlComponents\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.230399] (unitree_guide2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/control/CtrlComponents.h:35:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kdeleting object of abstract class type \xe2\x80\x98\x1b[01m\x1b[KIOInterface\x1b[m\x1b[K\xe2\x80\x99 which has non-virtual destructor will cause undefined behavior [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor\x07-Wdelete-non-virtual-dtor\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.230567] (unitree_guide2) StderrLine: {'line': b'   35 |         \x1b[01;35m\x1b[Kdelete ioInter\x1b[m\x1b[K;\n'}
+[3.230691] (unitree_guide2) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.313401] (-) TimerEvent: {}
+[3.413765] (-) TimerEvent: {}
+[3.514091] (-) TimerEvent: {}
+[3.614448] (-) TimerEvent: {}
+[3.714787] (-) TimerEvent: {}
+[3.815162] (-) TimerEvent: {}
+[3.915549] (-) TimerEvent: {}
+[4.015960] (-) TimerEvent: {}
+[4.116348] (-) TimerEvent: {}
+[4.216887] (-) TimerEvent: {}
+[4.317283] (-) TimerEvent: {}
+[4.417660] (-) TimerEvent: {}
+[4.518077] (-) TimerEvent: {}
+[4.618479] (-) TimerEvent: {}
+[4.718884] (-) TimerEvent: {}
+[4.819269] (-) TimerEvent: {}
+[4.919708] (-) TimerEvent: {}
+[5.020132] (-) TimerEvent: {}
+[5.120501] (-) TimerEvent: {}
+[5.220874] (-) TimerEvent: {}
+[5.321313] (-) TimerEvent: {}
+[5.421742] (-) TimerEvent: {}
+[5.522152] (-) TimerEvent: {}
+[5.622541] (-) TimerEvent: {}
+[5.722939] (-) TimerEvent: {}
+[5.823327] (-) TimerEvent: {}
+[5.923758] (-) TimerEvent: {}
+[6.024195] (-) TimerEvent: {}
+[6.124539] (-) TimerEvent: {}
+[6.224974] (-) TimerEvent: {}
+[6.325340] (-) TimerEvent: {}
+[6.425650] (-) TimerEvent: {}
+[6.525989] (-) TimerEvent: {}
+[6.626350] (-) TimerEvent: {}
+[6.726669] (-) TimerEvent: {}
+[6.827059] (-) TimerEvent: {}
+[6.927446] (-) TimerEvent: {}
+[7.027889] (-) TimerEvent: {}
+[7.128245] (-) TimerEvent: {}
+[7.228609] (-) TimerEvent: {}
+[7.328984] (-) TimerEvent: {}
+[7.429311] (-) TimerEvent: {}
+[7.529725] (-) TimerEvent: {}
+[7.630108] (-) TimerEvent: {}
+[7.730505] (-) TimerEvent: {}
+[7.830923] (-) TimerEvent: {}
+[7.931315] (-) TimerEvent: {}
+[8.031704] (-) TimerEvent: {}
+[8.132095] (-) TimerEvent: {}
+[8.232479] (-) TimerEvent: {}
+[8.332884] (-) TimerEvent: {}
+[8.433277] (-) TimerEvent: {}
+[8.533671] (-) TimerEvent: {}
+[8.634071] (-) TimerEvent: {}
+[8.734452] (-) TimerEvent: {}
+[8.834810] (-) TimerEvent: {}
+[8.935189] (-) TimerEvent: {}
+[9.035571] (-) TimerEvent: {}
+[9.136105] (-) TimerEvent: {}
+[9.236485] (-) TimerEvent: {}
+[9.336858] (-) TimerEvent: {}
+[9.437249] (-) TimerEvent: {}
+[9.537622] (-) TimerEvent: {}
+[9.638057] (-) TimerEvent: {}
+[9.738439] (-) TimerEvent: {}
+[9.838791] (-) TimerEvent: {}
+[9.939224] (-) TimerEvent: {}
+[10.039627] (-) TimerEvent: {}
+[10.140062] (-) TimerEvent: {}
+[10.240348] (-) TimerEvent: {}
+[10.340669] (-) TimerEvent: {}
+[10.441050] (-) TimerEvent: {}
+[10.541370] (-) TimerEvent: {}
+[10.641762] (-) TimerEvent: {}
+[10.742133] (-) TimerEvent: {}
+[10.842449] (-) TimerEvent: {}
+[10.942763] (-) TimerEvent: {}
+[11.043081] (-) TimerEvent: {}
+[11.143517] (-) TimerEvent: {}
+[11.244109] (-) TimerEvent: {}
+[11.344516] (-) TimerEvent: {}
+[11.387546] (unitree_guide2) StdoutLine: {'line': b'[  6%] \x1b[32m\x1b[1mLinking CXX executable junior_ctrl\x1b[0m\n'}
+[11.444658] (-) TimerEvent: {}
+[11.544982] (-) TimerEvent: {}
+[11.645308] (-) TimerEvent: {}
+[11.717593] (unitree_guide2) StdoutLine: {'line': b'[100%] Built target junior_ctrl\n'}
+[11.731908] (unitree_guide2) CommandEnded: {'returncode': 0}
+[11.732538] (unitree_guide2) JobProgress: {'identifier': 'unitree_guide2', 'progress': 'install'}
+[11.745420] (unitree_guide2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2'], 'cwd': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'LANGUAGE': '', 'USER': 'nebbackwards', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'XCURSOR_SIZE': '24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control/lib:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/nebbackwards', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'KB_LAYOUT_DIR': '/usr/lib/x86_64-linux-gnu/qt5/qml/QMLTermWidget/kb-layouts', 'PS1': '\\[\x1b(B\x1b[m\\]\\[\\033[38;5;40m\\]\\u\\[\x1b(B\x1b[m\\]\\[\\033[38;5;40m\\]@\\h\\[\x1b(B\x1b[m\\]\\[\\033[38;5;27m\\]\\w\\e[38;5;196m\\]$(parse_git_branch)\\[\x1b(B\x1b[m\\]\\[\x1b(B\x1b[m\\]\\[\\e[38;5;15m\\] \\[\x1b(B\x1b[m\\]', 'MANAGERPID': '3841', 'SYSTEMD_EXEC_PID': '4339', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/nebbackwards/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '17754', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': '', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'nebbackwards', 'WINDOWID': '0', 'JOURNAL_STREAM': '9:30599', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'COLORFGBG': '15;0', 'USERNAME': 'nebbackwards', 'TERM': 'xterm', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/nebbackwards/miniconda3/condabin:/home/nebbackwards/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/thinkpad-E16:@/tmp/.ICE-unix/4085,unix/thinkpad-E16:/tmp/.ICE-unix/4085', 'INVOCATION_ID': 'bde06ef6f1b0436fa4a2100dc12ab920', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'Yaru', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.QV91N3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/unitree_guide2:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_gazebo:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_description:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/nebbackwards/miniconda3/bin/python', 'QSG_RENDER_LOOP': 'threaded', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', '_CONDA_EXE': '/home/nebbackwards/miniconda3/bin/conda', 'COLORSCHEMES_DIR': '/usr/lib/x86_64-linux-gnu/qt5/qml/QMLTermWidget/color-schemes', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/build/unitree_guide2', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/nebbackwards/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/nebbackwards/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs/lib/python3.12/site-packages:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/unitree_guide2:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_control:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/ros2_unitree_legged_msgs:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_gazebo:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/install/go1_navigation:/opt/ros/jazzy'}), 'shell': False}
+[11.746005] (-) TimerEvent: {}
+[11.756497] (unitree_guide2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[11.757212] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/lib/unitree_guide2/junior_ctrl\n'}
+[11.761655] (unitree_guide2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/lib/unitree_guide2/junior_ctrl" to ""\n'}
+[11.762067] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/package_run_dependencies/unitree_guide2\n'}
+[11.762385] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/parent_prefix_path/unitree_guide2\n'}
+[11.762736] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.sh\n'}
+[11.762977] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.dsv\n'}
+[11.763190] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/path.sh\n'}
+[11.763443] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/path.dsv\n'}
+[11.763605] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.bash\n'}
+[11.763859] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.sh\n'}
+[11.764090] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.zsh\n'}
+[11.764337] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.dsv\n'}
+[11.764497] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/package.dsv\n'}
+[11.764769] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/packages/unitree_guide2\n'}
+[11.764945] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config.cmake\n'}
+[11.765157] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config-version.cmake\n'}
+[11.765417] (unitree_guide2) StdoutLine: {'line': b'-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/package.xml\n'}
+[11.767643] (unitree_guide2) CommandEnded: {'returncode': 0}
+[11.781119] (unitree_guide2) JobEnded: {'identifier': 'unitree_guide2', 'rc': 0}
+[11.781925] (-) EventReactorShutdown: {}

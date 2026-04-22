@@ -37,6 +37,7 @@ struct FSMStateList{
     State_GaitTransition *gaitTransition;
 #ifdef COMPILE_WITH_MOVE_BASE
     State_move_base *moveBase;
+    State_move_gait *moveGait;
 #endif  // COMPILE_WITH_MOVE_BASE
 
 #ifdef COMPILE_WITH_ROS2_MB
