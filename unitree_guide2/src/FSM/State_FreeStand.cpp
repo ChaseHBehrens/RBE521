@@ -60,7 +60,7 @@ FSMStateName State_FreeStand::checkChange(){
         return FSMStateName::PASSIVE;
     }
     else if(_lowState->userCmd == UserCommand::START){
-        return FSMStateName::TROTTING;
+        return FSMStateName::TRANSITION;
     }
     else{
         return FSMStateName::FREESTAND;

@@ -97,6 +97,18 @@ float WaveGenerator::getT()
     return _period;
 }
 
+void WaveGenerator::setPeriod(double period)
+{
+    _period = period;
+}
+void WaveGenerator::setBias(Vec4 bias)
+{
+    _bias = bias;
+}
+void WaveGenerator::setBeta(double stancePhaseRatio)
+{
+    _stRatio = stancePhaseRatio;
+}
 void WaveGenerator::calcWave(Vec4 &phase, VecInt4 &contact, WaveStatus status)
 {
     if (status == WaveStatus::WAVE_ALL)
