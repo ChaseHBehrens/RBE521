@@ -2,7 +2,7 @@ CMakeFiles/junior_ctrl.dir/src/FSM/State_move_gait.cpp.o: \
  /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/src/FSM/State_move_gait.cpp \
  /usr/include/stdc-predef.h \
  /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/State_move_gait.h \
- /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/State_Trotting.h \
+ /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/State_GaitTransition.h \
  /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/include/FSM/FSMState.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

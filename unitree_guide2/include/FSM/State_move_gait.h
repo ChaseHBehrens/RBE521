@@ -40,7 +40,7 @@ private:
 #ifndef STATE_MOVE_GAIT_H
 #define STATE_MOVE_GAIT_H
 
-#include "FSM/State_Trotting.h"
+#include "FSM/State_GaitTransition.h"
 #include "rclcpp/rclcpp.hpp"
 #include <geometry_msgs/msg/twist.hpp>
 #include "message/gaitCmd.h"
@@ -60,6 +60,8 @@ private:
     rclcpp::Subscription<GaitCmd>::SharedPtr _gaitSub;
     double _vx, _vy;
     double _wz;
+    double _beta, _period;
+    Vec4 _bias;
     rclcpp::executors::MultiThreadedExecutor::SharedPtr executor;
     std::thread executor_thread;
 };
