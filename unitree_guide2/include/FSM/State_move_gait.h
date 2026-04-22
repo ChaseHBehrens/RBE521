@@ -54,8 +54,10 @@ private:
     void getUserCmd();
     void initRecv();
     void twistCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
+    void gaitCallback(const GaitCmd::SharedPtr msg);
     rclcpp::Node::SharedPtr _nm;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr _cmdSub;
+    rclcpp::Subscription<GaitCmd>::SharedPtr _gaitSub;
     double _vx, _vy;
     double _wz;
     rclcpp::executors::MultiThreadedExecutor::SharedPtr executor;
