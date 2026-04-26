@@ -13,8 +13,10 @@
 #include "FSM/State_BalanceTest.h"
 #include "FSM/State_SwingTest.h"
 #include "FSM/State_StepTest.h"
+#include "FSM/State_GaitTransition.h"
 #include "common/enumClass.h"
 #include "control/CtrlComponents.h"
+#include "FSM/State_move_gait.h"
 #ifdef COMPILE_WITH_MOVE_BASE
     #include "FSM/State_move_base.h"
 #endif  // COMPILE_WITH_MOVE_BASE
@@ -32,18 +34,22 @@ struct FSMStateList{
     State_BalanceTest *balanceTest;
     State_SwingTest *swingTest;
     State_StepTest *stepTest;
+    State_GaitTransition *gaitTransition;
 #ifdef COMPILE_WITH_MOVE_BASE
     State_move_base *moveBase;
+    State_move_gait *moveGait;
 #endif  // COMPILE_WITH_MOVE_BASE
 
 #ifdef COMPILE_WITH_ROS2_MB
     State_move_base *moveBase;
+    State_move_gait *moveGait;
 #endif  // COMPILE_WITH_ROS2_MB
 
     void deletePtr(){
         delete invalid;
         delete passive;
         delete fixedStand;
+        delete gaitTransition;
         delete freeStand;
         delete trotting;
         delete balanceTest;
@@ -51,9 +57,11 @@ struct FSMStateList{
         delete stepTest;
 #ifdef COMPILE_WITH_MOVE_BASE
         delete moveBase;
+        delete moveGait;
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
         delete moveBase;
+        delete moveGait;
 #endif  // COMPILE_WITH_ROS2_MB
     }
 };

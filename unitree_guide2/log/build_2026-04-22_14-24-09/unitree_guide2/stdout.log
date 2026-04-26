@@ -1,0 +1,10 @@
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[  6%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/interface/KeyBoard.cpp.o[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_move_gait.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/interface/IOROS.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/quadProgpp/QuadProg++.cc.o[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/control/ControlFrame.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/interface/IOSDK.cpp.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/interface/WirelessHandle.cpp.o[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/quadProgpp/Array.cc.o[0m

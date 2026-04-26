@@ -108,9 +108,18 @@ float WaveGenerator::getTstance() { return _period * _stRatio; }
 float WaveGenerator::getTswing()  { return _period * (1 - _stRatio); }
 float WaveGenerator::getT()       { return _period; }
 
-/**
- * Core Waveform Logic: Maps time to a 0.0-1.0 phase and determines contact.
- */
+void WaveGenerator::setPeriod(double period)
+{
+    _period = period;
+}
+void WaveGenerator::setBias(Vec4 bias)
+{
+    _bias = bias;
+}
+void WaveGenerator::setBeta(double stancePhaseRatio)
+{
+    _stRatio = stancePhaseRatio;
+}
 void WaveGenerator::calcWave(Vec4 &phase, VecInt4 &contact, WaveStatus status)
 {
     // Standard walking/running gait
