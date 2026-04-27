@@ -110,10 +110,6 @@ protected:
    * Error handling does not have to be done. It is done in `on_init`-method of this class.
    */
   void declare_parameters();
-  
-  bool first_activation_ = true;  // Skip brake on first activation to allow free-fall
-  rclcpp::Time activation_time_;   // Time when controller was activated
-  static constexpr double FREE_FALL_DURATION = 0.0;  // Disabled - apply forces immediately
 
   /**
    * Derived controllers have to read parameters in this method and set `command_interface_types_`

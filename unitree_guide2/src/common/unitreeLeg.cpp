@@ -134,13 +134,15 @@ Mat3 QuadrupedLeg::calcJaco(Vec3 q){
     float c23 = c2 * c3 - s2 * s3;
     float s23 = s2 * c3 + c2 * s3;
     jaco(0, 0) = 0;
-    jaco(1, 0) = -l3 * c1 * c23 - l2 * c1 * c2 - l1 * s1;
-    jaco(2, 0) = -l3 * s1 * c23 - l2 * c2 * s1 + l1 * c1;
-    jaco(0, 1) = l3 * c23 + l2 * c2;
-    jaco(1, 1) = l3 * s1 * s23 + l2 * s1 * s2;
-    jaco(2, 1) = -l3 * c1 * s23 - l2 * c1 * s2;
-    jaco(0, 2) = l3 * c23;
-    jaco(1, 2) = l3 * s1 * s23;
+    jaco(1, 0) = - l1 * s1 - l2 * c1 * c2   -l3 * c1 * c23  ;
+    jaco(2, 0) =   l1 * c1 - l2 * c2 * s1 + -l3 * s1 * c23 ;
+
+    jaco(0, 1) = 0 + l2 * c2        + l3 * c23 ;
+    jaco(1, 1) = 0 + l2 * s1 * s2   + l3 * s1 * s23 ;
+    jaco(2, 1) = 0 - l2 * c1 * s2    -l3 * c1 * s23 ;
+
+    jaco(0, 2) =  l3 * c23;
+    jaco(1, 2) =  l3 * s1 * s23;
     jaco(2, 2) = -l3 * c1 * s23;
 
     return jaco;

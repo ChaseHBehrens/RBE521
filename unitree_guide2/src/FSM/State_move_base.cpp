@@ -52,7 +52,7 @@ State_move_base::State_move_base(CtrlComponents *ctrlComp)
     _stateNameString = "move_base";
     _nm = rclcpp::Node::make_shared("state_mb");
     auto executor = std::make_shared<rclcpp::executors::MultiThreadedExecutor>(
-        rclcpp::ExecutorOptions(), 2
+        rclcpp::ExecutorOptions(), 1
     );
     executor->add_node(_nm);
     executor_thread = std::thread([executor] (){

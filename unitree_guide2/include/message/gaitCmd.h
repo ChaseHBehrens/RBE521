@@ -1,3 +1,5 @@
+#include "common/mathTypes.h"
+#include "common/mathTools.h"
 #include <memory>
 #ifndef GAITCMD_H
 #define GAITCMD_H
