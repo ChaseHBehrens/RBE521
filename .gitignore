@@ -1,3 +1,5 @@
 ros2_unitree_legged_controller/
 go1_sim/
-
+build/
+install/
+log/

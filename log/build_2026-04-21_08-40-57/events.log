@@ -1,9 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000447] (-) JobUnselected: {'identifier': 'go1_control'}
-[0.000499] (-) JobUnselected: {'identifier': 'go1_description'}
-[0.000529] (-) JobUnselected: {'identifier': 'go1_gazebo'}
-[0.000551] (-) JobUnselected: {'identifier': 'go1_navigation'}
-[0.000573] (-) JobUnselected: {'identifier': 'ros2_unitree_legged_control'}
-[0.000593] (-) JobUnselected: {'identifier': 'ros2_unitree_legged_msgs'}
-[0.000611] (-) JobUnselected: {'identifier': 'unitree_guide2'}
-[0.001068] (-) EventReactorShutdown: {}
