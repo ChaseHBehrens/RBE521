@@ -37,7 +37,7 @@ State_GaitTransition::State_GaitTransition(CtrlComponents *ctrlComp)
 
     // Initialize default gait params (Trot)
     _targetPeriod = 0.45;
-    _targetBeta   = 0.5;
+    _targetBeta   = 1;
     _targetBias   = Vec4(0, 0.5, 0.5, 0);
 
 #ifdef RUN_ROS
