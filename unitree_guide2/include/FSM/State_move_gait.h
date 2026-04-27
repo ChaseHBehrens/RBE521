@@ -24,7 +24,7 @@ private:
     void gaitCallback(const GaitCmd::msg::SharedPtr msg);
     ros::NodeHandle _nm;
     ros::Subscriber _cmdSub;
-    ros::Subscriver _gaitSub;
+    ros::Subscriber _gaitSub;
     double _vx, _vy;
     double _wz;
     double _beta, _period;
@@ -54,10 +54,10 @@ private:
     void getUserCmd();
     void initRecv();
     void twistCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
-    void gaitCallback(const GaitCmd::SharedPtr msg);
+    void gaitCallback(const GaitCmdMsg::SharedPtr msg);
     rclcpp::Node::SharedPtr _nm;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr _cmdSub;
-    rclcpp::Subscription<GaitCmd>::SharedPtr _gaitSub;
+    rclcpp::Subscription<GaitCmdMsg>::SharedPtr _gaitSub;
     double _vx, _vy;
     double _wz;
     double _beta, _period;

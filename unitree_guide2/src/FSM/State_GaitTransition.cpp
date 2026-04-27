@@ -35,6 +35,19 @@ State_GaitTransition::State_GaitTransition(CtrlComponents *ctrlComp)
     _vyLim = _robModel->getRobVelLimitY();
     _wyawLim = _robModel->getRobVelLimitYaw();
 
+    // Initialize default gait params (Trot)
+    _targetPeriod = 0.45;
+    _targetBeta   = 0.5;
+    _targetBias   = Vec4(0, 0.5, 0.5, 0);
+
+#ifdef RUN_ROS
+    if(_ctrlComp->node) {
+        _gaitSub = _ctrlComp->node->create_subscription<ros2_unitree_legged_msgs::msg::GaitCmd>(
+            "gait_out", 10,
+            std::bind(&State_GaitTransition::gaitCmdCallback, this, std::placeholders::_1)
+        );
+    }
+#endif
 }
 
 State_GaitTransition::~State_GaitTransition(){
@@ -71,7 +84,6 @@ FSMStateName State_GaitTransition::checkChange(){
 }
 
 void State_GaitTransition::run(){
-    //update gait params
     _ctrlComp->waveGen->setBias(_targetBias);
     _ctrlComp->waveGen->setBeta(_targetBeta);
     _ctrlComp->waveGen->setPeriod(_targetPeriod);
@@ -115,26 +127,10 @@ void State_GaitTransition::run(){
             _lowCmd->setStableGain(i);
         }
     }
-
 }
 
 bool State_GaitTransition::checkStepOrNot(){
-    // FIX for Gazebo Sim: Always return true to maintain active trot-in-place
-    // Gazebo Sim physics requires active stepping to maintain balance, unlike Gazebo Classic
-    // The robot will trot in place (zero velocity) until user commands motion with w/a/s/d
-    // This prevents falling when standing still in trotting mode
     return true;
-    
-    // Original logic (disabled for Gazebo Sim):
-    // if( (fabs(_vCmdBody(0)) > 0.03) ||
-    //     (fabs(_vCmdBody(1)) > 0.03) ||
-    //     (fabs(_posError(0)) > 0.08) ||
-    //     (fabs(_posError(1)) > 0.08) ||
-    //     (fabs(_dYawCmd) > 0.20) ){
-    //     return true;
-    // }else{
-    //     return false;
-    // }
 }
 
 void State_GaitTransition::setHighCmd(double vx, double vy, double wz){
@@ -145,25 +141,22 @@ void State_GaitTransition::setHighCmd(double vx, double vy, double wz){
 }
 
 void State_GaitTransition::setGaitCmd(double period, double stancePhaseRatio, Vec4 bias){
-    _targetBeta = stancePhaseRatio;
-    _targetBias = bias;
+    _targetBeta   = stancePhaseRatio;
+    _targetBias   = bias;
     _targetPeriod = period;
 }
 
 void State_GaitTransition::getUserCmd(){
-    /* Movement */
     _vCmdBody(0) =  invNormalize(_userValue.ly, _vxLim(0), _vxLim(1));
     _vCmdBody(1) = -invNormalize(_userValue.lx, _vyLim(0), _vyLim(1));
     _vCmdBody(2) = 0;
 
-    /* Turning */
     _dYawCmd = -invNormalize(_userValue.rx, _wyawLim(0), _wyawLim(1));
     _dYawCmd = 0.9*_dYawCmdPast + (1-0.9) * _dYawCmd;
     _dYawCmdPast = _dYawCmd;
 }
 
 void State_GaitTransition::calcCmd(){
-    /* Movement */
     _vCmdGlobal = _B2G_RotMat * _vCmdBody;
 
     _vCmdGlobal(0) = saturation(_vCmdGlobal(0), Vec2(_velBody(0)-0.2, _velBody(0)+0.2));
@@ -174,9 +167,7 @@ void State_GaitTransition::calcCmd(){
 
     _vCmdGlobal(2) = 0;
 
-    /* Turning */
     _yawCmd = _yawCmd + _dYawCmd * _ctrlComp->dt;
-
     _Rd = rotz(_yawCmd);
     _wCmdGlobal(2) = _dYawCmd;
 }
@@ -196,11 +187,12 @@ void State_GaitTransition::calcTau(){
     _dWbd(1) = saturation(_dWbd(1), Vec2(-40, 40));
     _dWbd(2) = saturation(_dWbd(2), Vec2(-10, 10));
 
-    _forceFeetGlobal = - _balCtrl->calF(_ddPcd, _dWbd, _B2G_RotMat, _posFeet2BGlobal, *_contact);
+    _forceFeetGlobal = -_balCtrl->calF(_ddPcd, _dWbd, _B2G_RotMat, _posFeet2BGlobal, *_contact);
 
     for(int i(0); i<4; ++i){
         if((*_contact)(i) == 0){
-            _forceFeetGlobal.col(i) = _KpSwing*(_posFeetGlobalGoal.col(i) - _posFeetGlobal.col(i)) + _KdSwing*(_velFeetGlobalGoal.col(i)-_velFeetGlobal.col(i));
+            _forceFeetGlobal.col(i) = _KpSwing*(_posFeetGlobalGoal.col(i) - _posFeetGlobal.col(i)) 
+                                    + _KdSwing*(_velFeetGlobalGoal.col(i) - _velFeetGlobal.col(i));
         }
     }
 
@@ -210,17 +202,22 @@ void State_GaitTransition::calcTau(){
 }
 
 void State_GaitTransition::calcQQd(){
-
     Vec34 _posFeet2B;
-    _posFeet2B = _robModel->getFeet2BPositions(*_lowState,FrameType::BODY);
+    _posFeet2B = _robModel->getFeet2BPositions(*_lowState, FrameType::BODY);
     
     for(int i(0); i<4; ++i){
         _posFeet2BGoal.col(i) = _G2B_RotMat * (_posFeetGlobalGoal.col(i) - _posBody);
-        _velFeet2BGoal.col(i) = _G2B_RotMat * (_velFeetGlobalGoal.col(i) - _velBody); 
-        // _velFeet2BGoal.col(i) = _G2B_RotMat * (_velFeetGlobalGoal.col(i) - _velBody - _B2G_RotMat * (skew(_lowState->getGyro()) * _posFeet2B.col(i)) );  //  c.f formula (6.12) 
+        _velFeet2BGoal.col(i) = _G2B_RotMat * (_velFeetGlobalGoal.col(i) - _velBody);
     }
     
     _qGoal = vec12ToVec34(_robModel->getQ(_posFeet2BGoal, FrameType::BODY));
     _qdGoal = vec12ToVec34(_robModel->getQd(_posFeet2B, _velFeet2BGoal, FrameType::BODY));
 }
 
+#ifdef RUN_ROS
+void State_GaitTransition::gaitCmdCallback(const ros2_unitree_legged_msgs::msg::GaitCmd::SharedPtr msg){
+    Vec4 bias;
+    bias << msg->b.l1, msg->b.l2, msg->b.l3, msg->b.l4;
+    setGaitCmd(msg->period, msg->beta, bias);
+}
+#endif

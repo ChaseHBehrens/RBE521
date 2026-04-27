@@ -169,4 +169,18 @@ link_directories(
 
 install(TARGETS junior_ctrl DESTINATION lib/${PROJECT_NAME})
 
+add_executable(gait_node src/gait_node.cpp)
+if(CATKIN_MAKE)
+    ament_target_dependencies(gait_node
+        rclcpp
+        std_msgs
+        ros2_unitree_legged_msgs
+        Boost
+    )
+endif()
+target_link_libraries(gait_node -pthread lcm)
+install(TARGETS gait_node DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+
 ament_package()

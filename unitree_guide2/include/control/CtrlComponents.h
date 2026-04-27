@@ -3,7 +3,6 @@
 ***********************************************************************/
 #ifndef CTRLCOMPONENTS_H
 #define CTRLCOMPONENTS_H
-
 #include "message/LowlevelCmd.h"
 #include "message/LowlevelState.h"
 #include "interface/IOInterface.h"
@@ -14,10 +13,12 @@
 #include "control/BalanceCtrl.h"
 #include <string>
 #include <iostream>
-
+#ifdef RUN_ROS
+#include <rclcpp/rclcpp.hpp>
+#endif
 #ifdef COMPILE_DEBUG
 #include "common/PyPlot.h"
-#endif  // COMPILE_DEBUG
+#endif
 
 struct CtrlComponents{
 public:
@@ -39,7 +40,7 @@ public:
         delete balCtrl;
 #ifdef COMPILE_DEBUG
         delete plot;
-#endif  // COMPILE_DEBUG
+#endif
     }
     LowlevelCmd *lowCmd;
     LowlevelState *lowState;
@@ -48,52 +49,42 @@ public:
     WaveGenerator *waveGen;
     Estimator *estimator;
     BalanceCtrl *balCtrl;
-
 #ifdef COMPILE_DEBUG
     PyPlot *plot;
-#endif  // COMPILE_DEBUG
-
+#endif
     VecInt4 *contact;
     Vec4 *phase;
-
     double dt;
     bool *running;
     CtrlPlatform ctrlPlatform;
-
+#ifdef RUN_ROS
+    rclcpp::Node::SharedPtr node;
+#endif
     void sendRecv(){
         ioInter->sendRecv(lowCmd, lowState);
     }
-
     void runWaveGen(){
         waveGen->calcContactPhase(*phase, *contact, _waveStatus);
     }
-
     void setAllStance(){
         _waveStatus = WaveStatus::STANCE_ALL;
     }
-
     void setAllSwing(){
         _waveStatus = WaveStatus::SWING_ALL;
     }
-
     void setStartWave(){
         _waveStatus = WaveStatus::WAVE_ALL;
     }
-
     void geneObj(){
         estimator = new Estimator(robotModel, lowState, contact, phase, dt);
         balCtrl = new BalanceCtrl(robotModel);
-
 #ifdef COMPILE_DEBUG
         plot = new PyPlot();
         balCtrl->setPyPlot(plot);
         estimator->setPyPlot(plot);
-#endif  // COMPILE_DEBUG
+#endif
     }
-
 private:
     WaveStatus _waveStatus = WaveStatus::SWING_ALL;
-
 };
-
 #endif  // CTRLCOMPONENTS_H
