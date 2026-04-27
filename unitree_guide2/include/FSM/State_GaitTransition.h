@@ -1,12 +1,13 @@
-/**********************************************************************
- Copyright (c) 2020-2023, Unitree Robotics.Co.Ltd. All rights reserved.
-***********************************************************************/
 #ifndef TRANSITION_H
 #define TRANSITION_H
-
 #include "FSM/FSMState.h"
 #include "Gait/GaitGenerator.h"
 #include "control/BalanceCtrl.h"
+
+#ifdef RUN_ROS
+#include <rclcpp/rclcpp.hpp>
+#include <ros2_unitree_legged_msgs/msg/gait_cmd.hpp>
+#endif
 
 class State_GaitTransition : public FSMState{
 public:
@@ -25,6 +26,11 @@ private:
     virtual void getUserCmd();
     void calcBalanceKp();
     bool checkStepOrNot();
+
+#ifdef RUN_ROS
+    void gaitCmdCallback(const ros2_unitree_legged_msgs::msg::GaitCmd::SharedPtr msg);
+    rclcpp::Subscription<ros2_unitree_legged_msgs::msg::GaitCmd>::SharedPtr _gaitSub;
+#endif
 
     GaitGenerator *_gait;
     Estimator *_est;
@@ -71,4 +77,5 @@ private:
     AvgCov *_avg_angError = new AvgCov(3, "_angError", true, 1000, 1000, 1000);
 };
 
-#endif  // TRANSITION_H
+#endif
+

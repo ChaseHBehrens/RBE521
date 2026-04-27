@@ -45,7 +45,15 @@ private:
 #ifdef RUN_ROS
     rclcpp::Node::SharedPtr _node;
     rclcpp::Publisher<ros2_unitree_legged_msgs::msg::GaitCmd>::SharedPtr _gaitPub;
-    void publishGaitCmd(double period, double beta, double b1, double b2, double b3, double b4);
+    void publishGaitCmd(
+        double period, 
+        double beta, 
+        double b1, 
+        double b2, 
+        double b3, 
+        double b4, 
+        const std::string& name
+    ); 
 #endif
 };
 

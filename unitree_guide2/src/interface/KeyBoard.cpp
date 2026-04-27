@@ -16,8 +16,18 @@ KeyBoard::KeyBoard(rclcpp::Node::SharedPtr node) : _node(node) {
     pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
 }
 
-void KeyBoard::publishGaitCmd(double period, double beta,
-                               double b1, double b2, double b3, double b4) {
+void KeyBoard::publishGaitCmd(
+    double period, 
+    double beta, 
+    double b1, 
+    double b2, 
+    double b3, 
+    double b4,
+    const std::string& name
+) {
+    std::cout << "[GAIT] Switching to: " << name 
+              << " (period=" << period 
+              << ", beta=" << beta << ")" << std::endl;
     auto msg = ros2_unitree_legged_msgs::msg::GaitCmd();
     msg.period = period;
     msg.beta   = beta;
@@ -70,17 +80,14 @@ UserCommand KeyBoard::checkCmd(){
     case '8':
         return UserCommand::L1_Y;
 #ifdef RUN_ROS
-    case 't': case 'T':
-        publishGaitCmd(0.45, 0.5, 0, 0.5, 0.5, 0);  // Trot
+    case 't':
+        publishGaitCmd(0.6, 0.6, 0, 0.5, 0.5, 0, "Trot");
         return UserCommand::NONE;
-    case 'y': case 'Y':
-        publishGaitCmd(0.4, 0.6, 0, 0.5, 0.5, 0);   // Walking trot
+    case 'p': 
+        publishGaitCmd(0.6, 0.6, 0, 0.5, 0, 0.5, "Pace");
         return UserCommand::NONE;
-    case 'r': case 'R':
-        publishGaitCmd(0.4, 0.35, 0, 0.5, 0.5, 0);  // Running trot
-        return UserCommand::NONE;
-    case 'p': case 'P':
-        publishGaitCmd(0.4, 0.7, 0, 0, 0, 0);        // Pronk
+    case 'j':
+        publishGaitCmd(0.4, 0.7, 0, 0, 0, 0, "Pronk");
         return UserCommand::NONE;
 #endif
     case ' ':

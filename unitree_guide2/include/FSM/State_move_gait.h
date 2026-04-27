@@ -24,7 +24,7 @@ private:
     void gaitCallback(const GaitCmd::msg::SharedPtr msg);
     ros::NodeHandle _nm;
     ros::Subscriber _cmdSub;
-    ros::Subscriver _gaitSub;
+    ros::Subscriber _gaitSub;
     double _vx, _vy;
     double _wz;
     double _beta, _period;

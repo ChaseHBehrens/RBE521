@@ -5,9 +5,9 @@
 using namespace std::chrono_literals;
 
 struct Gait {
-    Vec4 bias;
     double beta;
     double period;
+    Vec4 bias;
 };
 
 class GaitNode : public rclcpp::Node {
@@ -54,10 +54,10 @@ private:
     }
 
     int i  = 0;
-    int n  = 100;
-    Gait target{};
-    Gait curr{};
-    Gait initial{};
+    int n  = 1000;
+    Gait target {0.5, 0.5,  Vec4(0, 0.5, 0.5, 0)};
+    Gait curr {0.5, 0.5,  Vec4(0, 0.5, 0.5, 0)};
+    Gait initial {0.5, 0.5,  Vec4(0, 0.5, 0.5, 0)};
     Vec4   bias_step   = Vec4::Zero();
     double beta_step   = 0.0;
     double period_step = 0.0;
