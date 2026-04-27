@@ -90,7 +90,7 @@ void State_move_gait::twistCallback(const geometry_msgs::msg::Twist::SharedPtr m
     _vy = msg->linear.y;
     _wz = msg->angular.z;
 }
-void State_move_gait::gaitCallback(const GaitCmd::SharedPtr msg){
+void State_move_gait::gaitCallback(const GaitCmdMsg::SharedPtr msg){
     _beta= msg->beta;
     _period = msg->period;
     _bias = Vec4({msg->b.l1, msg->b.l2, msg->b.l3, msg->b.l4});
@@ -98,7 +98,7 @@ void State_move_gait::gaitCallback(const GaitCmd::SharedPtr msg){
 void State_move_gait::initRecv(){
     std::cout << "Initialized cmd vel sub" << std::endl;
     _cmdSub = _nm->create_subscription<geometry_msgs::msg::Twist>("/cmd_vel", 1, std::bind(&State_move_gait::twistCallback, this, std::placeholders::_1));
-    _gaitSub = _nm->create_subscription<GaitCmd>("/cmd_gait", 1, std::bind(&State_move_gait::gaitCallback, this, std::placeholders::_1));
+    _gaitSub = _nm->create_subscription<GaitCmdMsg>("/cmd_gait", 1, std::bind(&State_move_gait::gaitCallback, this, std::placeholders::_1));
 }
 
 #endif  // COMPILE_WITH_ROS2_MB

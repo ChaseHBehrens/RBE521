@@ -4,22 +4,45 @@
 #include "interface/KeyBoard.h"
 #include <iostream>
 
+#ifdef RUN_ROS
+KeyBoard::KeyBoard(rclcpp::Node::SharedPtr node) : _node(node) {
+    _gaitPub = _node->create_publisher<ros2_unitree_legged_msgs::msg::GaitCmd>("gait_cmd", 10);
+    userCmd = UserCommand::NONE;
+    userValue.setZero();
+    tcgetattr(fileno(stdin), &_oldSettings);
+    _newSettings = _oldSettings;
+    _newSettings.c_lflag &= (~ICANON & ~ECHO);
+    tcsetattr(fileno(stdin), TCSANOW, &_newSettings);
+    pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
+}
+
+void KeyBoard::publishGaitCmd(double period, double beta,
+                               double b1, double b2, double b3, double b4) {
+    auto msg = ros2_unitree_legged_msgs::msg::GaitCmd();
+    msg.period = period;
+    msg.beta   = beta;
+    msg.b.l1   = b1;
+    msg.b.l2   = b2;
+    msg.b.l3   = b3;
+    msg.b.l4   = b4;
+    _gaitPub->publish(msg);
+}
+#else
 KeyBoard::KeyBoard(){
     userCmd = UserCommand::NONE;
     userValue.setZero();
-
-    tcgetattr( fileno( stdin ), &_oldSettings );
+    tcgetattr(fileno(stdin), &_oldSettings);
     _newSettings = _oldSettings;
     _newSettings.c_lflag &= (~ICANON & ~ECHO);
-    tcsetattr( fileno( stdin ), TCSANOW, &_newSettings );
-
+    tcsetattr(fileno(stdin), TCSANOW, &_newSettings);
     pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
 }
+#endif
 
 KeyBoard::~KeyBoard(){
     pthread_cancel(_tid);
     pthread_join(_tid, NULL);
-    tcsetattr( fileno( stdin ), TCSANOW, &_oldSettings );
+    tcsetattr(fileno(stdin), TCSANOW, &_oldSettings);
 }
 
 UserCommand KeyBoard::checkCmd(){
@@ -35,17 +58,31 @@ UserCommand KeyBoard::checkCmd(){
 #ifdef COMPILE_WITH_MOVE_BASE
     case '5':
         return UserCommand::L2_Y;
-#endif  // COMPILE_WITH_MOVE_BASE
+#endif
 #ifdef COMPILE_WITH_ROS2_MB
     case '5':
         return UserCommand::L2_Y;
-#endif  // COMPILE_WITH_ROS2_MB
+#endif
     case '0':
         return UserCommand::L1_X;
     case '9':
         return UserCommand::L1_A;
     case '8':
         return UserCommand::L1_Y;
+#ifdef RUN_ROS
+    case 't': case 'T':
+        publishGaitCmd(0.45, 0.5, 0, 0.5, 0.5, 0);  // Trot
+        return UserCommand::NONE;
+    case 'y': case 'Y':
+        publishGaitCmd(0.4, 0.6, 0, 0.5, 0.5, 0);   // Walking trot
+        return UserCommand::NONE;
+    case 'r': case 'R':
+        publishGaitCmd(0.4, 0.35, 0, 0.5, 0.5, 0);  // Running trot
+        return UserCommand::NONE;
+    case 'p': case 'P':
+        publishGaitCmd(0.4, 0.7, 0, 0, 0, 0);        // Pronk
+        return UserCommand::NONE;
+#endif
     case ' ':
         userValue.setZero();
         return UserCommand::NONE;
@@ -56,29 +93,28 @@ UserCommand KeyBoard::checkCmd(){
 
 void KeyBoard::changeValue(){
     switch (_c){
-    case 'w':case 'W':
+    case 'w': case 'W':
         userValue.ly = min<float>(userValue.ly+sensitivityLeft, 1.0);
         break;
-    case 's':case 'S':
+    case 's': case 'S':
         userValue.ly = max<float>(userValue.ly-sensitivityLeft, -1.0);
         break;
-    case 'd':case 'D':
+    case 'd': case 'D':
         userValue.lx = min<float>(userValue.lx+sensitivityLeft, 1.0);
         break;
-    case 'a':case 'A':
+    case 'a': case 'A':
         userValue.lx = max<float>(userValue.lx-sensitivityLeft, -1.0);
         break;
-
-    case 'i':case 'I':
+    case 'i': case 'I':
         userValue.ry = min<float>(userValue.ry+sensitivityRight, 1.0);
         break;
-    case 'k':case 'K':
+    case 'k': case 'K':
         userValue.ry = max<float>(userValue.ry-sensitivityRight, -1.0);
         break;
-    case 'l':case 'L':
+    case 'l': case 'L':
         userValue.rx = min<float>(userValue.rx+sensitivityRight, 1.0);
         break;
-    case 'j':case 'J':
+    case 'j': case 'J':
         userValue.rx = max<float>(userValue.rx-sensitivityRight, -1.0);
         break;
     default:
@@ -94,12 +130,10 @@ void* KeyBoard::runKeyBoard(void *arg){
 void* KeyBoard::run(void *arg){
     while(1){
         FD_ZERO(&set);
-        FD_SET( fileno( stdin ), &set );
-
-        res = select( fileno( stdin )+1, &set, NULL, NULL, NULL);
-
+        FD_SET(fileno(stdin), &set);
+        res = select(fileno(stdin)+1, &set, NULL, NULL, NULL);
         if(res > 0){
-            ret = read( fileno( stdin ), &_c, 1 );
+            ret = read(fileno(stdin), &_c, 1);
             userCmd = checkCmd();
             if(userCmd == UserCommand::NONE)
                 changeValue();

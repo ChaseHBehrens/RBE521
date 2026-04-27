@@ -297,7 +297,7 @@ IOROS::IOROS(rclcpp::Node::SharedPtr node_ptr) : IOInterface(){
 
     signal(SIGINT, IOROS::RosShutDown);
 
-    cmdPanel = new KeyBoard();
+    cmdPanel = new KeyBoard(_nm);
     
 }
 
