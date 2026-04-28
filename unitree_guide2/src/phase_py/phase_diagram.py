@@ -30,6 +30,7 @@ class GaitSubscriber(Node):
         self.y_tot = []
         self.n = 4 # num legs
         
+        plt.ion()
         self.fig, self.ax = plt.subplots()
         self.ax = init_phase_diagram(self.ax, self.n)
 
@@ -57,7 +58,9 @@ class GaitSubscriber(Node):
 
         self.get_logger().info('running')
         self.ax = update(0, self.ax, self.phase_data, self.y_tot, self.n) 
-        plt.show()
+        
+        self.fig.canvas.draw()
+        self.fig.canvas.flush_events()
 
 
 
