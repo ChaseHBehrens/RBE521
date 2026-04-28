@@ -52,9 +52,7 @@ class GaitSubscriber(Node):
             ys.append(y)
         
         self.phase_data.append(xs)
-        self.y_tot.append(ys)
-    
-        self.get_logger().info('running')
+        self.y_tot.append(ys) 
         latest = len(self.phase_data) - 1
         self.ax = update(latest, self.ax, self.phase_data, self.y_tot, self.n)
         
@@ -78,7 +76,6 @@ def test_data_collection(n:int):
 
         for i in range(n):
             wrap = rel_phases[i] + beta - 1
-            # Bug 2 fixed: same swap here
             if wrap > 0:
                 x = [(rel_phases[i], 1 - rel_phases[i]), (0, wrap)]
             else:
@@ -112,7 +109,6 @@ def init_phase_diagram(ax:Axes, n:int):
 def update(frame:int, ax:Axes, x:list, y:list, n:int):
     """Update the plot based on the current frame"""
     ax.cla()
-    # Bug 4 fixed: hardcoded range(4) replaced with range(n)
     for i in range(n):
         ax.broken_barh(x[frame][i], y[frame][i])
 
@@ -135,7 +131,7 @@ def main(args=None):
 
 
 if __name__ == '__main__':
-    n = 4 # legs
+    n = 4
     phase_data, y = main()
     # phase_data, y = test_data_collection(n)
     
@@ -143,7 +139,6 @@ if __name__ == '__main__':
     ax = init_phase_diagram(ax, n)
     l = len(phase_data)
 
-    # Bug 5 fixed: blit=True -> blit=False (update() doesn't return artists)
     ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=False, repeat=False)
 
     fp = "/media/phase_diagram.gif"
