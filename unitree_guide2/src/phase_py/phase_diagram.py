@@ -36,28 +36,27 @@ class GaitSubscriber(Node):
 
     def listener_callback(self, msg):
         beta = msg.beta
-        rel_phases = [msg.b.l1, msg.b.l4, msg.b.l3, msg.b.l4]
-
+        rel_phases = [msg.b.l1, msg.b.l2, msg.b.l3, msg.b.l4]
+    
         xs = []
         ys = []
-
-        # for each leg
+    
         for i in range(self.n):
-            # find amount of support phase that would go over 1 and would have to wrap back around to 0
             wrap = rel_phases[i] + beta - 1
-            if wrap > 0: 
-                x = [(rel_phases[i], beta)]
+            if wrap > 0:
+                x = [(rel_phases[i], 1 - rel_phases[i]), (0, wrap)]
             else:
-                x = [(rel_phases[i], beta), (0, wrap)]
+                x = [(rel_phases[i], beta)]
             y = (self.n-i-1.5, 1)
             xs.append(x)
             ys.append(y)
         
         self.phase_data.append(xs)
         self.y_tot.append(ys)
-
+    
         self.get_logger().info('running')
-        self.ax = update(0, self.ax, self.phase_data, self.y_tot, self.n) 
+        latest = len(self.phase_data) - 1
+        self.ax = update(latest, self.ax, self.phase_data, self.y_tot, self.n)
         
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
@@ -71,31 +70,26 @@ def test_data_collection(n:int):
         n(int): number of legs"""
     phase_data = []
     y_tot = []
-    # Loop through simulation steps
     for _ in range(5):
-        # duty factor and rel phase changes every simulation step
         beta = 0.4
         rel_phases = np.random.uniform(0, 1, n)
         xs = []
         ys = []
 
-        # for each leg
         for i in range(n):
             wrap = rel_phases[i] + beta - 1
-            if wrap > 0: 
-                x = [(rel_phases[i], beta)]
+            # Bug 2 fixed: same swap here
+            if wrap > 0:
+                x = [(rel_phases[i], 1 - rel_phases[i]), (0, wrap)]
             else:
-                x = [(rel_phases[i], beta), (0, wrap)]
+                x = [(rel_phases[i], beta)]
             y = (n-i-1.5, 1)
             xs.append(x)
             ys.append(y)
             
         phase_data.append(xs)
         y_tot.append(ys)
-            
 
-    # print(f"phase: {phase_data}")
-    # print(f"y: {y}")
     return phase_data, y_tot
 
 def init_phase_diagram(ax:Axes, n:int):
@@ -117,14 +111,13 @@ def init_phase_diagram(ax:Axes, n:int):
 
 def update(frame:int, ax:Axes, x:list, y:list, n:int):
     """Update the plot based on the current frame"""
-    # Clear prev data and replot kinematic phases based on the current frame
     ax.cla()
-    for i in range(4):
+    # Bug 4 fixed: hardcoded range(4) replaced with range(n)
+    for i in range(n):
         ax.broken_barh(x[frame][i], y[frame][i])
 
     ax = init_phase_diagram(ax, n)
     return ax
-
 
 
 def main(args=None):
@@ -134,10 +127,8 @@ def main(args=None):
 
     rclpy.spin(gait_tracker)
 
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
-    phase_data, y = gait_tracker.phase_data, gait_tracker.y
+    # Bug 3 fixed: gait_tracker.y -> gait_tracker.y_tot
+    phase_data, y = gait_tracker.phase_data, gait_tracker.y_tot
     gait_tracker.destroy_node()
     rclpy.shutdown()
     return phase_data, y
@@ -152,14 +143,13 @@ if __name__ == '__main__':
     ax = init_phase_diagram(ax, n)
     l = len(phase_data)
 
-    ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=True, repeat=False)
+    # Bug 5 fixed: blit=True -> blit=False (update() doesn't return artists)
+    ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=False, repeat=False)
 
-    # save animation
     fp = "/media/phase_diagram.gif"
 
     try:
         if os.path.exists(fp):
-
             os.chmod(fp, 0o666)
             print("File permissions modified successfully!")
             ani.save(filename=fp, writer="pillow")
@@ -168,6 +158,4 @@ if __name__ == '__main__':
     except PermissionError:
         print("Permission denied: You don't have the necessary permissions to change the permissions of this file.")
 
-
-    
     plt.show()
