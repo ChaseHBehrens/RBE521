@@ -20,6 +20,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
 
 if(NOT DEFINED ROBOT_TYPE)
@@ -181,6 +182,14 @@ if(CATKIN_MAKE)
 endif()
 target_link_libraries(gait_node -pthread lcm)
 install(TARGETS gait_node DESTINATION lib/${PROJECT_NAME})
+
+# Phython executables
+ament_python_install_package(${PROJECT_NAME} PACKAGE_DIR src/phase_py)
+
+install(PROGRAMS
+  src/phase_py/phase_diagram.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
