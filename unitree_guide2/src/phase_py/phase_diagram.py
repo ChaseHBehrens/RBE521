@@ -12,24 +12,30 @@ from functools import partial
 from matplotlib.axes import Axes
 import os
 
+from ros2_unitree_legged_msgs.msg import GaitCmd
 
 class GaitSubscriber(Node):
 
     def __init__(self):
         super().__init__('phase_diag_node')
         self.subscription = self.create_subscription(
-            String,
+            GaitCmd,
             'gait_out',
             self.listener_callback,
             10)
+
+        self.get_logger().info('init')
         self.subscription  # prevent unused variable warning
         self.phase_data = []
         self.y_tot = []
         self.n = 4 # num legs
+        
+        self.fig, self.ax = plt.subplots()
+        self.ax = init_phase_diagram(self.ax, self.n)
 
     def listener_callback(self, msg):
         beta = msg.beta
-        rel_phases = msg.b
+        rel_phases = [msg.b.l1, msg.b.l4, msg.b.l3, msg.b.l4]
 
         xs = []
         ys = []
@@ -45,11 +51,15 @@ class GaitSubscriber(Node):
             y = (self.n-i-1.5, 1)
             xs.append(x)
             ys.append(y)
-            
+        
         self.phase_data.append(xs)
         self.y_tot.append(ys)
-                
-   
+
+        self.get_logger().info('running')
+        self.ax = update(0, self.ax, self.phase_data, self.y_tot, self.n) 
+        plt.show()
+
+
 
 def test_data_collection(n:int):
     """
@@ -85,8 +95,9 @@ def test_data_collection(n:int):
     # print(f"y: {y}")
     return phase_data, y_tot
 
-def plot_phase_diagram(ax:Axes, n:int):
+def init_phase_diagram(ax:Axes, n:int):
     """Formating for kinematic phase diagram"""
+
     low = 0.5 
     high = n-low
     ax.set_yticks(range(n), labels=range(1, n+1))
@@ -108,7 +119,7 @@ def update(frame:int, ax:Axes, x:list, y:list, n:int):
     for i in range(4):
         ax.broken_barh(x[frame][i], y[frame][i])
 
-    ax = plot_phase_diagram(ax, n)
+    ax = init_phase_diagram(ax, n)
     return ax
 
 
@@ -135,7 +146,7 @@ if __name__ == '__main__':
     # phase_data, y = test_data_collection(n)
     
     fig, ax = plt.subplots()
-    ax = plot_phase_diagram(ax, n)
+    ax = init_phase_diagram(ax, n)
     l = len(phase_data)
 
     ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=True, repeat=False)

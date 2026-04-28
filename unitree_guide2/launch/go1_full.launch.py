@@ -31,17 +31,17 @@ def generate_launch_description():
     )
 
 
-    phase_diag_node = TimerAction(
-        period=45.0,
-        actions=[
-            Node(
-                package='unitree_guide2',
-                executable='phase_diag_node',
-                name='phase_diag_node',
-                output='screen',
-            )
-        ]
-    )
+    #phase_diag_node = TimerAction(
+    #    period=1.0,
+    #    actions=[
+    #        Node(
+    #            package='unitree_guide2',
+    #            executable='phase_diag_node',
+    #            name='phase_diag_node',
+    #            output='screen',
+    #        )
+    #    ]
+    #)
 
     junior_ctrl = TimerAction(
         period=46.0,
@@ -59,6 +59,6 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo_launch,
         gait_node,
-        phase_diag_node,
+        #phase_diag_node,
         junior_ctrl,
     ])
