@@ -14,6 +14,10 @@ import os
 
 from ros2_unitree_legged_msgs.msg import GaitCmd
 
+X_FILEPATH = "phase_data.npy"
+Y_FILEPATH = "y_data.npy"
+VID_FILEPATH = "phase_diagram.gif"
+
 class GaitSubscriber(Node):
 
     def __init__(self):
@@ -87,7 +91,8 @@ def test_data_collection(n:int):
         phase_data.append(xs)
         y_tot.append(ys)
 
-    return phase_data, y_tot
+    np.save(X_FILEPATH, np.array(phase_data, dtype=object))
+    np.save(Y_FILEPATH, np.array(y_tot, dtype=object))  
 
 def init_phase_diagram(ax:Axes, n:int):
     """Formating for kinematic phase diagram"""
@@ -129,6 +134,10 @@ def main(args=None):
     rclpy.shutdown()
     return phase_data, y
 
+def read_file():
+    phase_data = np.load(X_FILEPATH, allow_pickle=True)
+    y_data = np.load(Y_FILEPATH, allow_pickle=True)
+    return phase_data.tolist(), y_data.tolist()
 
 if __name__ == '__main__':
     n = 4
@@ -139,18 +148,8 @@ if __name__ == '__main__':
     ax = init_phase_diagram(ax, n)
     l = len(phase_data)
 
-    ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=False, repeat=False)
-
-    fp = "/media/phase_diagram.gif"
-
-    try:
-        if os.path.exists(fp):
-            os.chmod(fp, 0o666)
-            print("File permissions modified successfully!")
-            ani.save(filename=fp, writer="pillow")
-        else:
-            print("File not found:", fp)
-    except PermissionError:
-        print("Permission denied: You don't have the necessary permissions to change the permissions of this file.")
+    ani = animation.FuncAnimation(fig, partial(update, ax=ax, x=phase_data, y=y, n=n), frames=l, interval=30, blit=False, repeat=False)    
+    ani.save(filename=VID_FILEPATH, writer="pillow")
+        
 
     plt.show()
