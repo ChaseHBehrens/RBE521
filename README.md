@@ -1,159 +1,112 @@
----
+# Introduction
+Here are the ROS simulation packages for Unitree robots, You can load robots and joint controllers in Gazebo, so you can perform low-level control (control the torque, position and angular velocity) of the robot joints. Please be aware that the Gazebo simulation cannot do high-level control, namely walking. Aside from these simulation functions, you can also control your real robots in ROS with the [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real) packages. For real robots, you can do high-level and low-level control using our ROS packages.
 
-# **Unitree GO1 Simulation with ROS 2 Jazzy Gazebo**
+## Packages:
+Robot description:
 
-This repository contains a simulation environment for the **Unitree GO1 robot** in **Gazebo Sim** and **ROS 2**, along with an interface for navigation.
-The functionality has been tested with **ROS Jazzy** on **Ubuntu 24.04**.
+* [`a1`](robots/a1_description)
+* [`a2`](robots/a2_description)
+* [`aliengo`](robots/aliengo_description)
+* [`aliengoZ1`](robots/aliengoZ1_description)
+* [`b1`](robots/b1_description)
+* [`b2`](robots/b2_description)
+* [`b2w`](robots/b2w_description)
+* [`dexterous_hand`](robots/dexterous_hand_description)
+* [`g1`](robots/g1_description)
+* [`go1`](robots/go1_description)
+* [`go2`](robots/go2_description)
+* [`go2w`](robots/go2w_description)
+* [`h1_2`](robots/h1_2_description)
+* [`h1`](robots/h1_description)
+* [`h2`](robots/h2_description)
+* [`laikago`](robots/laikago_description)
+* [`r1`](robots/r1_description)
+* [`r1_air`](robots/r1_air_description)
+* [`z1`](robots/z1_description)
 
----
+Robot and joints controller:
+* `unitree_controller`
+* `z1_controller`
 
-## **Dependencies:**
+Simulation related:
+* `unitree_gazebo`
+* `unitree_legged_control`
 
-* **[LCM](https://lcm-proj.github.io/lcm/)** – Needs to be built from source
-* **[Navigation2](https://github.com/ros-navigation/navigation2)**
-* **[ros2_control](https://github.com/ros-controls/ros2_control)**
-* **[ros2_controllers](https://github.com/ros-controls/ros2_controllers)**
-* **[Gazebo ROS 2 Plugins](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins)**
+# Dependencies
+* [ROS](https://www.ros.org/) Melodic or ROS Kinetic (has not been tested)
+* [Gazebo8](http://gazebosim.org/)
+* [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros_to_real): `unitree_legged_msgs` is a package under [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real).
+# Build
+<!-- If you would like to fully compile the `unitree_ros`, please run the following command to install relative packages. -->
 
----
-
-### **1. ROS 2 Jazzy, Gazebo Sim & RViz (if not installed)**
-
-Install **ROS 2**, **RViz2**, and **Gazebo integration packages**. Skip if already installed.
-
-```bash
-sudo apt update && sudo apt install -y \
-    ros-jazzy-desktop \
-    ros-jazzy-rviz2 \
-    ros-jazzy-xacro \
-    ros-jazzy-colcon-common-extensions
-
-sudo apt install -y \
-    ros-jazzy-ros-gz \
-    ros-jazzy-ros-gz-sim \
-    ros-jazzy-ros-gz-bridge \
-    ros-jazzy-ros-gz-image
+For ROS Melodic:
+```
+sudo apt-get install ros-melodic-controller-interface  ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-joint-trajectory-controller
+```
+For ROS Kinetic:
+```
+sudo apt-get install ros-kinetic-controller-manager ros-kinetic-ros-control ros-kinetic-ros-controllers ros-kinetic-joint-state-controller ros-kinetic-effort-controllers ros-kinetic-velocity-controllers ros-kinetic-position-controllers ros-kinetic-robot-controllers ros-kinetic-robot-state-publisher ros-kinetic-gazebo8-ros ros-kinetic-gazebo8-ros-control ros-kinetic-gazebo8-ros-pkgs ros-kinetic-gazebo8-ros-dev
 ```
 
----
+And open the file `unitree_gazebo/worlds/stairs.world`. At the end of the file:
+```
+<include>
+    <uri>model:///home/unitree/catkin_ws/src/unitree_ros/unitree_gazebo/worlds/building_editor_models/stairs</uri>
+</include>
+```
+Please change the path of `building_editor_models/stairs` to the real path on your PC.
 
-### **2. Build & Runtime Dependencies**
-
-#### **2.1 Essential system packages**
-
-```bash
-sudo apt install -y \
-    build-essential cmake git python3-pip \
-    libeigen3-dev libprotobuf-dev protobuf-compiler
+Then you can use catkin_make to build:
+```
+cd ~/catkin_ws
+catkin_make
 ```
 
-#### **2.2 Navigation2**
+If you face a dependency problem, you can just run `catkin_make` again.
 
-```bash
-sudo apt install -y ros-jazzy-navigation2 ros-jazzy-nav2-bringup
+# Detail of Packages
+## unitree_legged_control:
+It contains the joints controllers for Gazebo simulation, which allows users to control joints with position, velocity and torque. Refer to "[unitree_ros/unitree_controller/src/servo.cpp](https://github.com/unitreerobotics/unitree_ros/blob/master/unitree_controller/src/servo.cpp)" for joint control examples in different modes.
+
+## The description of robots:
+Namely the description of Go1, A1, Aliengo and Laikago. Each package includes mesh, urdf and xacro files of robot. Take Laikago for example, you can check the model in Rviz by:
+```
+roslaunch laikago_description laikago_rviz.launch
 ```
 
-#### **2.3 ros2_control and ros2_controllers**
+## unitree_gazebo & unitree_controller:
+You can launch the Gazebo simulation with the following command:
+```
+roslaunch unitree_gazebo normal.launch rname:=a1 wname:=stairs
+```
+Where the `rname` means robot name, which can be `laikago`, `aliengo`, `a1` or `go1`. The `wname` means world name, which can be `earth`, `space` or `stairs`. And the default value of `rname` is `laikago`, while the default value of `wname` is `earth`. In Gazebo, the robot should be lying on the ground with joints not activated.
 
-```bash
-sudo apt install -y \
-    ros-jazzy-ros2-control \
-    ros-jazzy-ros2-controllers \
-    ros-jazzy-controller-manager \
-    ros-jazzy-joint-state-broadcaster \
-    ros-jazzy-joint-trajectory-controller \
-    ros-jazzy-imu-sensor-broadcaster
+### 1. Stand controller
+After launching the gazebo simulation, you can start to control the robot:
+```
+rosrun unitree_controller unitree_servo
 ```
 
-#### **2.4 Gazebo ROS 2 Plugins**
+And you can add external disturbances, like a push or a kick:
+```
+rosrun unitree_controller unitree_external_force
+```
+### 2. Position and pose publisher
+Here we demonstrated how to control the position and pose of robot without a controller, which should be useful in SLAM or visual development.
 
-```bash
-sudo apt install ros-jazzy-ros-gz ros-jazzy-gz-ros2-control
+Then run the position and pose publisher in another terminal:
+```
+rosrun unitree_controller unitree_move_kinetic
+```
+The robot will turn around the origin, which is the movement under the world coordinate frame. And inside of the source file [move_publisher.cpp](https://github.com/unitreerobotics/unitree_ros/blob/master/unitree_controller/src/move_publisher.cpp), we also provide the method to move using the robot coordinate frame. You can change the value of `def_frame` to `coord::ROBOT` and run the catkin_make again, then the `unitree_move_publisher` will move robot under its own coordinate frame.
+
+## z1_controller
+
+You can launch the z1 Gazebo simulation with the following command:
 
 ```
-
-#### **2.5 ROS 2 Message Packages**
-
-```bash
-sudo apt install -y \
-    ros-jazzy-geometry-msgs \
-    ros-jazzy-sensor-msgs \
-    ros-jazzy-std-msgs \
-    ros-jazzy-nav-msgs
+roslaunch unitree_gazebo z1.launch
 ```
 
-#### **2.6 go1_description dependencies**
-
-```bash
-sudo apt install -y ros-jazzy-robot-state-publisher
-```
-
-#### **2.7 LCM (build from source)**
-
-```bash
-cd ~
-git clone https://github.com/lcm-proj/lcm.git
-cd lcm
-mkdir build && cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-sudo ldconfig
-```
-
----
-
-## **3. Build Your Workspace**
-
-After installing dependencies:
-
-```bash
-mkdir -p ~/your_ros2_ws/src
-cd ~/your_ros2_ws/src
-git clone https://github.com/AUB-RoboticsTeam/Unitree_Go1_ros2_jazzy.git
-cd ..
-colcon build --symlink-install
-source install/setup.bash
-```
-
----
-
-## **Testing**
-
-After a successful build, run the simulation and interface in **separate terminals**:
-
-### **Terminal 1 – Launch Gazebo Simulation & Controllers**
-
-```bash
-ros2 launch go1_gazebo spawn_go1_gz.launch.py
-```
-
-This will load the simulation and initialize controllers.
-
-### **Terminal 2 – Activate Unitree Go1 Interface & State Machine**
-
-```bash
-ros2 run unitree_guide2 junior_ctrl
-```
-
-This activates the interface and state machine.
-**Run this once the last controller plugin (*RL_calf_controller*) has loaded successfully**
-
-* Press **2** to switch the robot to standing mode (`fixed_stand`)
-* Press **5** to switch to move_base mode (robot accepts velocity commands)
-
----
-
-## **Acknowledgements**
-
-This project builds upon the following open-source packages:
-
-* **[unitreerobotics/unitree_ros](https://github.com/unitreerobotics/unitree_ros)**
-  Used as the starting point for the robot description, meshes, and simulation setup.
-
-* **[Atharva-05/unitree_ros2_sim](https://github.com/Atharva-05/unitree_ros2_sim)**
-  Reference and starting point for ROS 2 simulation packages for Unitree Go1.
-  Several packages and launch files in this repository were adapted and extended.
-
----
-
+After launching the gazebo simulation, you can start to control the z1 robot by z1_sdk.  
+see [z1_documentation](https://dev-z1.unitree.com)
