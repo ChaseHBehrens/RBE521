@@ -6,9 +6,9 @@
 
 FSM::FSM(CtrlComponents *ctrlComp)
     :_ctrlComp(ctrlComp){
-
     _stateList.invalid = nullptr;
     _stateList.passive = new State_Passive(_ctrlComp);
+    _stateList.gaitTransition = new State_GaitTransition(_ctrlComp);
     _stateList.fixedStand = new State_FixedStand(_ctrlComp);
     _stateList.freeStand = new State_FreeStand(_ctrlComp);
     _stateList.trotting = new State_Trotting(_ctrlComp);
@@ -17,9 +17,11 @@ FSM::FSM(CtrlComponents *ctrlComp)
     _stateList.stepTest = new State_StepTest(_ctrlComp);
 #ifdef COMPILE_WITH_MOVE_BASE
     _stateList.moveBase = new State_move_base(_ctrlComp);
+    _stateList.moveGait = new State_move_gait(_ctrlComp);
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
     _stateList.moveBase = new State_move_base(_ctrlComp);
+    _stateList.moveGait = new State_move_gait(_ctrlComp);
 #endif  // COMPILE_WITH_ROS2_MB
     initialize();
 }
@@ -83,6 +85,9 @@ FSMState* FSM::getNextState(FSMStateName stateName){
     case FSMStateName::TROTTING:
         return _stateList.trotting;
         break;
+    case FSMStateName::TRANSITION:
+        return _stateList.gaitTransition;
+        break;
     case FSMStateName::BALANCETEST:
         return _stateList.balanceTest;
         break;
@@ -96,10 +101,16 @@ FSMState* FSM::getNextState(FSMStateName stateName){
     case FSMStateName::MOVE_BASE:
         return _stateList.moveBase;
         break;
+    case FSMStateName::MOVE_GAIT:
+        return _stateList.moveGait;
+        break;
 #endif  // COMPILE_WITH_MOVE_BASE
 #ifdef COMPILE_WITH_ROS2_MB
     case FSMStateName::MOVE_BASE:
         return _stateList.moveBase;
+        break;
+    case FSMStateName::MOVE_GAIT:
+        return _stateList.moveGait;
         break;
 #endif  // COMPILE_WITH_ROS2_MB
     default:

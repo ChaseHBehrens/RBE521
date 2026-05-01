@@ -58,13 +58,13 @@ FSMStateName State_FixedStand::checkChange(){
     }
 #ifdef COMPILE_WITH_MOVE_BASE
     else if(_lowState->userCmd == UserCommand::L2_Y){
-        return FSMStateName::MOVE_BASE;
+        return FSMStateName::MOVE_GAIT;
     }
 #endif  // COMPILE_WITH_MOVE_BASE
 
 #ifdef COMPILE_WITH_ROS2_MB
     else if(_lowState->userCmd == UserCommand::L2_Y){
-        return FSMStateName::MOVE_BASE;
+        return FSMStateName::MOVE_GAIT;
     }
 #endif  // COMPILE_WITH_ROS2_MB
     else{

@@ -20,6 +20,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
 
 if(NOT DEFINED ROBOT_TYPE)
@@ -170,5 +171,26 @@ link_directories(
 
 install(TARGETS junior_ctrl DESTINATION lib/${PROJECT_NAME})
 
-ament_package()
+add_executable(gait_node src/gait_node.cpp)
+if(CATKIN_MAKE)
+    ament_target_dependencies(gait_node
+        rclcpp
+        std_msgs
+        ros2_unitree_legged_msgs
+        Boost
+    )
+endif()
+target_link_libraries(gait_node -pthread lcm)
+install(TARGETS gait_node DESTINATION lib/${PROJECT_NAME})
 
+# Phython executables
+ament_python_install_package(${PROJECT_NAME} PACKAGE_DIR src/phase_py)
+
+install(PROGRAMS
+  src/phase_py/phase_diagram.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+
+ament_package()

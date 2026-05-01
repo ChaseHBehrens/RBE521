@@ -1,0 +1,21 @@
+[  3%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_move_gait.cpp.o[0m
+[  6%] [32m[1mLinking CXX executable junior_ctrl[0m
+[100%] Built target junior_ctrl
+-- Install configuration: ""
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/lib/unitree_guide2/junior_ctrl
+-- Set non-toolchain portion of runtime path of "/home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/lib/unitree_guide2/junior_ctrl" to ""
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/package_run_dependencies/unitree_guide2
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/parent_prefix_path/unitree_guide2
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.sh
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/ament_prefix_path.dsv
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/path.sh
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/environment/path.dsv
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.bash
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.sh
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.zsh
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/local_setup.dsv
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/package.dsv
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/ament_index/resource_index/packages/unitree_guide2
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config.cmake
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/cmake/unitree_guide2Config-version.cmake
+-- Installing: /home/nebbackwards/WPI/Classes/RBE521/Final/ros_workspace/src/RBE521/unitree_guide2/install/unitree_guide2/share/unitree_guide2/package.xml

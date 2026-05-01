@@ -6,7 +6,6 @@
 
 #include "common/mathTypes.h"
 #include "common/mathTools.h"
-
 struct MotorCmd{
     unsigned int mode;
     float q;

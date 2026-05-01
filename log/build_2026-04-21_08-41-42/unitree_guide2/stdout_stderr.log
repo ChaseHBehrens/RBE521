@@ -1,0 +1,320 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclpy: 7.1.9 (/opt/ros/jazzy/share/rclpy/cmake)
+-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  
+-- Found controller_manager: 4.42.2 (/opt/ros/jazzy/share/controller_manager/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found joint_trajectory_controller: 4.36.0 (/opt/ros/jazzy/share/joint_trajectory_controller/cmake)
+-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found ros_gz_sim: 1.0.18 (/opt/ros/jazzy/share/ros_gz_sim/cmake)
+-- Found robot_state_publisher: 3.3.3 (/opt/ros/jazzy/share/robot_state_publisher/cmake)
+-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Found ros2_unitree_legged_msgs: 0.4.0 (/home/sheca42513/ros2_ws/install/ros2_unitree_legged_msgs/share/ros2_unitree_legged_msgs/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (4.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/build/unitree_guide2
+[  7%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/main.cpp.o[0m
+[  7%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSM.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/FSMState.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_BalanceTest.cpp.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_ChangingGait.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_FixedStand.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_FreeStand.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_Passive.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/junior_ctrl.dir/src/FSM/State_StepTest.cpp.o[0m
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/State_FreeStand.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/State_FreeStand.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/State_Passive.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/State_Passive.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/FSM.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/State_BalanceTest.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/State_BalanceTest.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/FSMState.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/ControlFrame.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/main.cpp:9[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/State_FixedStand.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/State_FixedStand.cpp:5[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelCmd.h:8[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/State_StepTest.h:7[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/State_StepTest.cpp:4[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:[m[K In constructor ‘[01m[KAvgCov::[01;32m[KAvgCov[m[K(unsigned int, std::string, bool, unsigned int, unsigned int, double)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:278:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KAvgCov::_valueName[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  278 |     std::string [01;35m[K_valueName[m[K;
+      |                 [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:272:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AvgCov::_avgOnly[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     bool [01;35m[K_avgOnly[m[K;
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/common/mathTools.h:246:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  246 |     [01;35m[KAvgCov[m[K(unsigned int size, std::string name, bool avgOnly=false, unsigned int showPeriod=1000, unsigned int waitCount=5000, double zoomFactor=10000)
+      |     [01;35m[K^~~~~~[m[K
+In file included from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/message/LowlevelState.h:10[m[K,
+                 from [01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:8[m[K:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:[m[K In member function ‘[01m[Kvirtual void* CmdPanel::[01;32m[Krun[m[K(void*)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/interface/CmdPanel.h:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Karg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     virtual void* run([01;35m[Kvoid *arg[m[K){return NULL;}
+      |                       [01;35m[K~~~~~~^~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:[m[K In constructor ‘[01m[KFSMState::[01;32m[KFSMState[m[K(CtrlComponents*, FSMStateName, std::string)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:31:21:[m[K [01;35m[Kwarning: [m[K‘[01m[KFSMState::_ctrlComp[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   31 |     CtrlComponents *[01;35m[K_ctrlComp[m[K;
+      |                     [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSMState.h:28:18:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KFSMStateName FSMState::_stateName[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   28 |     FSMStateName [01;35m[K_stateName[m[K;
+      |                  [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/FSM/FSMState.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KFSMState[m[K::FSMState(CtrlComponents *ctrlComp, FSMStateName stateName, std::string stateNameString)
+      | [01;35m[K^~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:[m[K In destructor ‘[01m[KCtrlComponents::[01;32m[K~CtrlComponents[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/control/CtrlComponents.h:35:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KIOInterface[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   35 |         [01;35m[Kdelete ioInter[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:[m[K In member function ‘[01m[Kvoid FSMStateList::[01;32m[KdeletePtr[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:44:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KFSMState[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   44 |         [01;35m[Kdelete invalid[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:45:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Passive[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   45 |         [01;35m[Kdelete passive[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:46:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FixedStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   46 |         [01;35m[Kdelete fixedStand[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:47:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FreeStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   47 |         [01;35m[Kdelete freeStand[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:48:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Trotting[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   48 |         [01;35m[Kdelete trotting[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:49:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_BalanceTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   49 |         [01;35m[Kdelete balanceTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:50:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_SwingTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   50 |         [01;35m[Kdelete swingTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:51:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_StepTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   51 |         [01;35m[Kdelete stepTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:56:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_move_base[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   56 |         [01;35m[Kdelete moveBase[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:[m[K In member function ‘[01m[Kvoid FSMStateList::[01;32m[KdeletePtr[m[K()[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:44:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of abstract class type ‘[01m[KFSMState[m[K’ which has non-virtual destructor will cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   44 |         [01;35m[Kdelete invalid[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:45:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Passive[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   45 |         [01;35m[Kdelete passive[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:46:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FixedStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   46 |         [01;35m[Kdelete fixedStand[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:47:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_FreeStand[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   47 |         [01;35m[Kdelete freeStand[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:48:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_Trotting[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   48 |         [01;35m[Kdelete trotting[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:49:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_BalanceTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   49 |         [01;35m[Kdelete balanceTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:50:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_SwingTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   50 |         [01;35m[Kdelete swingTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:51:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_StepTest[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   51 |         [01;35m[Kdelete stepTest[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/include/FSM/FSM.h:56:9:[m[K [01;35m[Kwarning: [m[Kdeleting object of polymorphic class type ‘[01m[KState_move_base[m[K’ which has non-virtual destructor might cause undefined behavior [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdelete-non-virtual-dtor-Wdelete-non-virtual-dtor]8;;[m[K]
+   56 |         [01;35m[Kdelete moveBase[m[K;
+      |         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/main.cpp:[m[K In function ‘[01m[Kvoid[01;32m[K ShutDown[m[K(int)[m[K’:
+[01m[K/home/sheca42513/ros2_ws/src/Unitree_Go1_ros2_jazzy/unitree_guide2/src/main.cpp:31:19:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksig[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   31 | void ShutDown([01;35m[Kint sig[m[K)
+      |               [01;35m[K~~~~^~~[m[K
