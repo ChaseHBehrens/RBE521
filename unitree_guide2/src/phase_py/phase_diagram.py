@@ -99,7 +99,7 @@ def init_phase_diagram(ax:Axes, n:int):
 
     low = 0.5 
     high = n-low
-    ax.set_yticks(range(n), labels=range(1, n+1))
+    ax.set_yticks(range(n), labels=range(n, 0, -1))
     ax.set_yticks(np.arange(low, high, 1), minor=True)
     ax.invert_yaxis()
     ax.set_xlim(0, 1)

@@ -99,8 +99,8 @@ def _build_gz(context, *args, **kwargs):
             PathJoinSubstitution([FindPackageShare('ros_gz_sim'), 'launch', 'gz_sim.launch.py'])
         ]),
         launch_arguments={
-            'gz_args': TextSubstitution(text=f" -r {world_abs}"),
-            'gui': 'true',
+            'gz_args': TextSubstitution(text=f"-s -r {world_abs}"),  # -s = server only, no GUI
+            'gui': 'false',                                           # disable GUI client
             'verbose': 'false'
         }.items()
     )

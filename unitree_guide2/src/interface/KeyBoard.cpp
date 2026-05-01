@@ -86,8 +86,17 @@ UserCommand KeyBoard::checkCmd(){
     case 'p': 
         publishGaitCmd(0.6, 0.6, 0, 0.5, 0, 0.5, "Pace");
         return UserCommand::NONE;
-    case 'j':
-        publishGaitCmd(0.4, 0.7, 0, 0, 0, 0, "Pronk");
+    case 'y': 
+        publishGaitCmd(0.6, 0.6, 0, 0, 0.5, 0.5, "Bound");
+        return UserCommand::NONE;
+    case 'g': 
+        publishGaitCmd(0.6, 0.45, 0, 0.33, 0.67, 0, "Canter");
+        return UserCommand::NONE;
+    case 'h': 
+        publishGaitCmd(0.6, 0.55, 0, 0.25, 0.75, 0, "Walk");
+        return UserCommand::NONE;
+    case 'u': 
+        publishGaitCmd(0.6, 0.8, 0, 0.5, 0.5, 0, "High");
         return UserCommand::NONE;
 #endif
     case ' ':
