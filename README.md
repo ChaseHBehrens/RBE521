@@ -103,57 +103,36 @@ sudo ldconfig
 
 ---
 
-## **3. Build Your Workspace**
+## **3. Running the Application**
 
-After installing dependencies:
-
+After installing dependencies clone the repo into the ros2_ws space folder. Then build the package with colcon.
 ```bash
-mkdir -p ~/your_ros2_ws/src
-cd ~/your_ros2_ws/src
-git clone https://github.com/AUB-RoboticsTeam/Unitree_Go1_ros2_jazzy.git
-cd ..
 colcon build --symlink-install
 source install/setup.bash
 ```
 
----
-
-## **Testing**
-
-After a successful build, run the simulation and interface in **separate terminals**:
-
-### **Terminal 1 – Launch Gazebo Simulation & Controllers**
-
+Next run the launch file.
 ```bash
-ros2 launch go1_gazebo spawn_go1_gz.launch.py
+ros2 launch unitree_guide2 go1_full.launch.py
 ```
 
-This will load the simulation and initialize controllers.
-
-### **Terminal 2 – Activate Unitree Go1 Interface & State Machine**
+In a second terminal window cd into the ros2_ws and run the junior_ctrl node.
 
 ```bash
+source install/setup.bash
 ros2 run unitree_guide2 junior_ctrl
 ```
 
-This activates the interface and state machine.
-**Run this once the last controller plugin (*RL_calf_controller*) has loaded successfully**
+To initialize the program press `t`. You should see the phase diagram shift. Next press `2` to move the robot 
+into a standing position. Then press `3` to switch to fixed stand. Finally press `4` to switch to the gait transition 
+state. Use `w` `a` `s` `d` to control the robot movement. Switch gaits using the following commands. 
+- `t` Trot
+- `p` Pace
+- `y` Bound
+- `g` Canter
+- `h` Walk
+- `u` Amble
+- `o` Gallop
 
-* Press **2** to switch the robot to standing mode (`fixed_stand`)
-* Press **5** to switch to move_base mode (robot accepts velocity commands)
 
----
-
-## **Acknowledgements**
-
-This project builds upon the following open-source packages:
-
-* **[unitreerobotics/unitree_ros](https://github.com/unitreerobotics/unitree_ros)**
-  Used as the starting point for the robot description, meshes, and simulation setup.
-
-* **[Atharva-05/unitree_ros2_sim](https://github.com/Atharva-05/unitree_ros2_sim)**
-  Reference and starting point for ROS 2 simulation packages for Unitree Go1.
-  Several packages and launch files in this repository were adapted and extended.
-
----
 
