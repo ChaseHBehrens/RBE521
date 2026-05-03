@@ -43,22 +43,22 @@ def generate_launch_description():
         ]
     )
 
-    junior_ctrl = TimerAction(
-        period=46.0,
-        actions=[
-            Node(
-                package='unitree_guide2',
-                executable='junior_ctrl',
-                name='junior_ctrl',
-                output='screen',
-                prefix="alacritty --hold -e",
-            )
-        ]
-    )
+    #junior_ctrl = TimerAction(
+    #    period=46.0,
+    #    actions=[
+    #        Node(
+    #            package='unitree_guide2',
+    #            executable='junior_ctrl',
+    #            name='junior_ctrl',
+    #            output='screen',
+    #            prefix="alacritty --hold -e",
+    #        )
+    #    ]
+    #)
 
     return LaunchDescription([
         gazebo_launch,
         gait_node,
         phase_diag_node,
-        junior_ctrl,
+        #junior_ctrl,
     ])
