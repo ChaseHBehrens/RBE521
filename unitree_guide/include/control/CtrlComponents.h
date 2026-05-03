@@ -65,7 +65,7 @@ public:
     CtrlPlatform ctrlPlatform;
 #ifdef RUN_ROS
     // rclcpp::Node::SharedPtr node;
-    ros::NodeHandle node;
+    std::shared_ptr<ros::NodeHandle> node;
 #endif
 
     void sendRecv(){

@@ -107,9 +107,9 @@ private:
 #endif  // COMPILE_DEBUG
 #ifdef COMPILE_WITH_MOVE_BASE
     // from ros
-    ros::NodeHandle _nh;
-    ros::Publisher _pub;
-    tf::TransformBroadcaster _odomBroadcaster;
+    std::shared_ptr<ros::NodeHandle> _nh;
+    std::shared_ptr<ros::Publisher> _pub;
+    std::shared_ptr<tf::TransformBroadcaster> _odomBroadcaster;
     ros::Time _currentTime;
     geometry_msgs::TransformStamped _odomTF;
     nav_msgs::Odometry _odomMsg;

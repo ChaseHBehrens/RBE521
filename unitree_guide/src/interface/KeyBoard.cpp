@@ -82,22 +82,25 @@ UserCommand KeyBoard::checkCmd(){
         return UserCommand::L1_Y;
 #ifdef RUN_ROS
     case 't':
-        publishGaitCmd(0.6, 0.6, 0, 0.5, 0.5, 0, "Trot");
+        publishGaitCmd(0.6, 0.8, 0, 0.5, 0.5, 0, "Trot");
         return UserCommand::NONE;
     case 'p': 
-        publishGaitCmd(0.6, 0.6, 0, 0.5, 0, 0.5, "Pace");
+        publishGaitCmd(0.6, 0.8, 0, 0.5, 0, 0.5, "Pace");
         return UserCommand::NONE;
     case 'y': 
-        publishGaitCmd(0.6, 0.6, 0, 0, 0.5, 0.5, "Bound");
+        publishGaitCmd(0.6, 0.8, 0, 0, 0.5, 0.5, "Bound");
         return UserCommand::NONE;
     case 'g': 
         publishGaitCmd(0.6, 0.45, 0, 0.33, 0.67, 0, "Canter");
         return UserCommand::NONE;
     case 'h': 
-        publishGaitCmd(0.6, 0.55, 0, 0.25, 0.75, 0, "Walk");
+        publishGaitCmd(0.6, 0.8, 0, 0.5, 0.75, 0.25, "Walk");
         return UserCommand::NONE;
     case 'u': 
-        publishGaitCmd(0.6, 0.8, 0, 0.5, 0.5, 0, "High");
+        publishGaitCmd(0.6, 0.5, 0, 0.6, 0.8, 0.3, "Amble");
+        return UserCommand::NONE;
+    case 'o': 
+        publishGaitCmd(0.6, 0.3, 0, 0.25, 0.7, 0.75, "Gallop");
         return UserCommand::NONE;
 #endif
     case ' ':
