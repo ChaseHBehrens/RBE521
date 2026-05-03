@@ -1,9 +1,12 @@
 ---
 
-# **Unitree GO1 Simulation with ROS 2 Jazzy Gazebo**
+# **Unitree GO1 Gait Transition Simulation**
 
-This repository contains a simulation environment for the **Unitree GO1 robot** in **Gazebo Sim** and **ROS 2**, along with an interface for navigation.
-The functionality has been tested with **ROS Jazzy** on **Ubuntu 24.04**.
+Term project for WPI RBE521 by Chase Behrens, Jessica Hart, Benjamin Proctor, and Kasia Racka.
+
+This project includes code to simulate the Unitree Go1 quadruped robot using ros2 jazzy.
+It includes the capability to dynamically transition between gaits and display a phase 
+diagram in real time.
 
 ---
 
