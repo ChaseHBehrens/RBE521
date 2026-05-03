@@ -123,6 +123,10 @@ source install/setup.bash
 ros2 run unitree_guide2 junior_ctrl
 ```
 
+---
+
+## **4. controling the robot**
+
 To initialize the program press `t`. You should see the phase diagram shift. Next press `2` to move the robot 
 into a standing position. Then press `3` to switch to fixed stand. Finally press `4` to switch to the gait transition 
 state. Use `w` `a` `s` `d` to control the robot movement. Switch gaits using the following commands. 
