@@ -14,9 +14,21 @@
 #include "interface/CmdPanel.h"
 #include "common/mathTools.h"
 
+#ifdef RUN_ROS
+// #include <rclcpp/rclcpp.hpp>
+// #include <ros2_unitree_legged_msgs/msg/gait_cmd.hpp>
+#include <unitree_guide/msg/gait_cmd.hpp>
+#include <ros/ros.h>
+#endif
+
 class KeyBoard : public CmdPanel{
 public:
+#ifdef RUN_ROS
+    // KeyBoard(rclcpp::Node::SharedPtr node);
+    KeyBoard(ros::NodeHandle node);
+#else
     KeyBoard();
+#endif
     ~KeyBoard();
 private:
     static void* runKeyBoard(void *arg);
@@ -32,6 +44,22 @@ private:
     int res;
     int ret;
     char _c;
+
+#ifdef RUN_ROS
+    // rclcpp::Node::SharedPtr _node;
+    // rclcpp::Publisher<ros2_unitree_legged_msgs::msg::GaitCmd>::SharedPtr _gaitPub;
+    ros::NodeHandle _node;
+    ros::Publisher<unitree_guide::msg::GaitCmd> _gaitPub;
+    void publishGaitCmd(
+        double period, 
+        double beta, 
+        double b1, 
+        double b2, 
+        double b3, 
+        double b4, 
+        const std::string& name
+    ); 
+#endif
 };
 
 #endif  // KEYBOARD_H

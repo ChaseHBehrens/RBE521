@@ -13,6 +13,7 @@ public:
     ~FeetEndCal();
     Vec3 calFootPos(int legID, Vec2 vxyGoalGlobal, float dYawGoal, float phase);
 private:
+    WaveGenerator *_waveGen;
     LowlevelState *_lowState;
     Estimator *_est;
     QuadrupedRobot *_robModel;

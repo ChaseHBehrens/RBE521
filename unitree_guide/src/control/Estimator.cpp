@@ -117,7 +117,9 @@ void Estimator::_initSystem(){
 
     /* ROS odometry publisher */
     #ifdef COMPILE_WITH_MOVE_BASE
+        _nh = rclcpp::Node::make_shared("estimator");
         _pub = _nh.advertise<nav_msgs::Odometry>("odom", 1);
+        _odomBroadcaster = std::make_shared<tf2_ros::TransformBroadcaster>(_nh); 
     #endif  // COMPILE_WITH_MOVE_BASE
 }
 
@@ -170,7 +172,8 @@ void Estimator::run(){
 
     #ifdef COMPILE_WITH_MOVE_BASE
         if(_count % ((int)( 1.0/(_dt*_pubFreq))) == 0){
-            _currentTime = ros::Time::now();
+            // _currentTime = ros::Time::now();
+            _currentTime = _nh->get_clock()->now();
             /* tf */
             _odomTF.header.stamp = _currentTime;
             _odomTF.header.frame_id = "odom";
@@ -184,7 +187,7 @@ void Estimator::run(){
             _odomTF.transform.rotation.y = _lowState->imu.quaternion[2];
             _odomTF.transform.rotation.z = _lowState->imu.quaternion[3];
 
-            _odomBroadcaster.sendTransform(_odomTF);
+            // _odomBroadcaster.sendTransform(_odomTF);
 
             /* odometry */
             _odomMsg.header.stamp = _currentTime;
@@ -211,7 +214,7 @@ void Estimator::run(){
             _odomMsg.twist.twist.angular.z = _wBody(2);
             _odomMsg.twist.covariance = _odom_twist_covariance;
 
-            _pub.publish(_odomMsg);
+            // _pub.publish(_odomMsg);
             _count = 1;
         }
         ++_count;

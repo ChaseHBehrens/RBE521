@@ -14,6 +14,10 @@
 #include "control/BalanceCtrl.h"
 #include <string>
 #include <iostream>
+#ifdef RUN_ROS
+// #include <rclcpp/rclcpp.hpp>
+#include <ros/ros.h>
+#endif
 
 #ifdef COMPILE_DEBUG
 #include "common/PyPlot.h"
@@ -59,6 +63,10 @@ public:
     double dt;
     bool *running;
     CtrlPlatform ctrlPlatform;
+#ifdef RUN_ROS
+    // rclcpp::Node::SharedPtr node;
+    ros::NodeHandle node;
+#endif
 
     void sendRecv(){
         ioInter->sendRecv(lowCmd, lowState);

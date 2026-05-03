@@ -4,22 +4,60 @@
 #include "interface/KeyBoard.h"
 #include <iostream>
 
+#ifdef RUN_ROS
+// KeyBoard::KeyBoard(rclcpp::Node::SharedPtr node) : _node(node) {
+KeyBoard::KeyBoard(ros::NodeHandle node) : _node(node) {
+    // _gaitPub = _node->create_publisher<ros2_unitree_legged_msgs::msg::GaitCmd>("gait_cmd", 10);
+    _gaitPub = _node->create_publisher<unitree_guide::msg::GaitCmd>("gait_cmd", 10);
+    userCmd = UserCommand::NONE;
+    userValue.setZero();
+    tcgetattr(fileno(stdin), &_oldSettings);
+    _newSettings = _oldSettings;
+    _newSettings.c_lflag &= (~ICANON & ~ECHO);
+    tcsetattr(fileno(stdin), TCSANOW, &_newSettings);
+    pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
+}
+
+void KeyBoard::publishGaitCmd(
+    double period, 
+    double beta, 
+    double b1, 
+    double b2, 
+    double b3, 
+    double b4,
+    const std::string& name
+) {
+    std::cout << "[GAIT] Switching to: " << name 
+              << " (period=" << period 
+              << ", beta=" << beta << ")" << std::endl;
+    // auto msg = ros2_unitree_legged_msgs::msg::GaitCmd();
+    auto msg = unitree_guide::msg::GaitCmd();
+    msg.period = period;
+    msg.beta   = beta;
+    msg.b.l1   = b1;
+    msg.b.l2   = b2;
+    msg.b.l3   = b3;
+    msg.b.l4   = b4;
+    _gaitPub->publish(msg);
+}
+#else
 KeyBoard::KeyBoard(){
     userCmd = UserCommand::NONE;
     userValue.setZero();
 
-    tcgetattr( fileno( stdin ), &_oldSettings );
+    tcgetattr(fileno(stdin), &_oldSettings);
     _newSettings = _oldSettings;
     _newSettings.c_lflag &= (~ICANON & ~ECHO);
-    tcsetattr( fileno( stdin ), TCSANOW, &_newSettings );
+    tcsetattr(fileno(stdin), TCSANOW, &_newSettings);
 
     pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
 }
+#endif
 
 KeyBoard::~KeyBoard(){
     pthread_cancel(_tid);
     pthread_join(_tid, NULL);
-    tcsetattr( fileno( stdin ), TCSANOW, &_oldSettings );
+    tcsetattr(fileno(stdin), TCSANOW, &_oldSettings);
 }
 
 UserCommand KeyBoard::checkCmd(){
@@ -42,6 +80,26 @@ UserCommand KeyBoard::checkCmd(){
         return UserCommand::L1_A;
     case '8':
         return UserCommand::L1_Y;
+#ifdef RUN_ROS
+    case 't':
+        publishGaitCmd(0.6, 0.6, 0, 0.5, 0.5, 0, "Trot");
+        return UserCommand::NONE;
+    case 'p': 
+        publishGaitCmd(0.6, 0.6, 0, 0.5, 0, 0.5, "Pace");
+        return UserCommand::NONE;
+    case 'y': 
+        publishGaitCmd(0.6, 0.6, 0, 0, 0.5, 0.5, "Bound");
+        return UserCommand::NONE;
+    case 'g': 
+        publishGaitCmd(0.6, 0.45, 0, 0.33, 0.67, 0, "Canter");
+        return UserCommand::NONE;
+    case 'h': 
+        publishGaitCmd(0.6, 0.55, 0, 0.25, 0.75, 0, "Walk");
+        return UserCommand::NONE;
+    case 'u': 
+        publishGaitCmd(0.6, 0.8, 0, 0.5, 0.5, 0, "High");
+        return UserCommand::NONE;
+#endif
     case ' ':
         userValue.setZero();
         return UserCommand::NONE;
@@ -90,9 +148,8 @@ void* KeyBoard::runKeyBoard(void *arg){
 void* KeyBoard::run(void *arg){
     while(1){
         FD_ZERO(&set);
-        FD_SET( fileno( stdin ), &set );
-
-        res = select( fileno( stdin )+1, &set, NULL, NULL, NULL);
+        FD_SET(fileno(stdin), &set);
+        res = select(fileno(stdin)+1, &set, NULL, NULL, NULL);
 
         if(res > 0){
             ret = read( fileno( stdin ), &_c, 1 );

@@ -48,14 +48,16 @@ int main(int argc, char **argv)
     std::cout << std::fixed << std::setprecision(3);
 
 #ifdef RUN_ROS
-    ros::init(argc, argv, "unitree_gazebo_servo");
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<rclcpp::Node>("unitree_gazebo_server");
+    std::cout << "initialized node" << std::endl;
 #endif // RUN_ROS
 
     IOInterface *ioInter;
     CtrlPlatform ctrlPlat;
 
 #ifdef COMPILE_WITH_SIMULATION
-    ioInter = new IOROS();
+    ioInter = new IOROS(node);
     ctrlPlat = CtrlPlatform::GAZEBO;
 #endif // COMPILE_WITH_SIMULATION
 
@@ -69,6 +71,12 @@ int main(int argc, char **argv)
     ctrlComp->dt = 0.002; // run at 500hz
     ctrlComp->running = &running;
 
+#ifdef RUN_ROS
+    ctrlComp->node = node;
+#endif
+
+    std::cout << "initialized ctrl components" << std::endl;
+
 #ifdef ROBOT_TYPE_A1
     ctrlComp->robotModel = new A1Robot();
 #endif
@@ -77,6 +85,7 @@ int main(int argc, char **argv)
 #endif
 
     ctrlComp->waveGen = new WaveGenerator(0.45, 0.5, Vec4(0, 0.5, 0.5, 0)); // Trot
+    std::cout << "initialized wave generator" << std::endl;
     // ctrlComp->waveGen = new WaveGenerator(1.1, 0.75, Vec4(0, 0.25, 0.5, 0.75));  //Crawl, only for sim
     // ctrlComp->waveGen = new WaveGenerator(0.4, 0.6, Vec4(0, 0.5, 0.5, 0));  //Walking Trot, only for sim
     // ctrlComp->waveGen = new WaveGenerator(0.4, 0.35, Vec4(0, 0.5, 0.5, 0));  //Running Trot, only for sim
@@ -85,6 +94,7 @@ int main(int argc, char **argv)
     ctrlComp->geneObj();
 
     ControlFrame ctrlFrame(ctrlComp);
+    std::cout << "initialized ctrl frame" << std::endl;
 
     signal(SIGINT, ShutDown);
 
